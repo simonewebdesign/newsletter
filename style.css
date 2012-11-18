@@ -1,0 +1,38 @@
+body {
+  color:#333;
+  background:#fff;
+  font-family:Verdana;
+}
+
+fieldset {
+  border:none;
+  margin-bottom:100px;
+}
+
+input, select, textarea {
+  padding:6px 12px;
+}
+
+input, textarea {
+  background:#eee;
+  border:1px solid #ccc;
+}
+
+input:hover {
+  background:#ddd;
+  border:1px solid #bbb;
+}
+
+select {
+  border:1px solid #ccc;
+}
+
+a {
+  color:#888;
+  text-decoration:none;
+  font-size:.8em;
+}
+
+a:hover {
+  text-decoration:underline;
+}
