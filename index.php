@@ -1,0 +1,1 @@
+<?phpinclude_once 'bootstrap.php';header('Location: ' . $cfg['site_full_url']);

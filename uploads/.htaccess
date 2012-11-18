@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^(.*)\.(png|jpg|gif)$ image.php [QSA,L]
