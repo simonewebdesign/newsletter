@@ -64,8 +64,7 @@ class User {
   }
   
   static function resetFetch() {
-    	$s = self::$db->prepare("UPDATE users SET has_received_mail=0");
-      return $s->execute();
+    return self::$db->exec("UPDATE users SET has_received_mail=0, fails=0");
   }
 
   static function all($limit=0) {
@@ -121,6 +120,24 @@ class User {
     if ( $s->execute(array($list_id)) ) {
       return $s->fetchAll(PDO::FETCH_OBJ);
     }
+  }
+
+  static function increment_fails($id) {
+    if ($id > 0) {
+      $q = "UPDATE `users` SET `fails`=`fails`+1 WHERE `id`=?";
+      $s = self::$db->prepare($q);
+      return $s->execute(array($id));
+    }
+    return false;
+  }
+
+  static function get_invalid_ones_by_list_id($list_id, $max_allowed_fails=5){
+    if ($list_id > 0) {
+      $q = "SELECT * from `users` WHERE `list_id`=? AND `fails`>=?";
+      $s = self::$db->prepare($q);
+      return $s->execute(array($list_id, $max_allowed_fails));
+    }
+    return false;
   }
   
 }
