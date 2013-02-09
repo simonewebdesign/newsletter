@@ -135,7 +135,9 @@ class User {
     if ($list_id > 0) {
       $q = "SELECT * from `users` WHERE `list_id`=? AND `fails`>=?";
       $s = self::$db->prepare($q);
-      return $s->execute(array($list_id, $max_allowed_fails));
+      if ( $s->execute(array($list_id, $max_allowed_fails)) ){
+        return $s->fetchAll(PDO::FETCH_OBJ);
+      }
     }
     return false;
   }
