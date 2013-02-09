@@ -1,18 +1,12 @@
 <h1>Cancellazione dalla Newsletter</h1>
 
-<p><?=$msg?></p>
-
 <?php
+
+$subscribed = true;
 
 if ( !isset($_POST['submit']) ) { // user hasn't submitted the form yet
 
   $msg = 'Se desideri davvero cancellare la tua iscrizione alla Newsletter, per favore digita il tuo indirizzo email.';
-
-?><form method=POST>
-			<label for="email">Indirizzo email</label>
-			<input id="email" name="email" type="email">
-			<input name="submit" type="submit" value="Unsubscribe">
-	</form><?php   
 
 } else { // user has submitted the form
 
@@ -23,21 +17,39 @@ if ( !isset($_POST['submit']) ) { // user hasn't submitted the form yet
     include_once 'bootstrap.php';
     include_once 'User.php';
     $user = User::findByEmail($email);
-    if ($user) { // user found
-      
+    if ($user) { 
+      // user found
       if ($user->is_subscribed) {
+
         User::unsubscribe($user->id);
         $msg = "Da questo momento non riceverai più email da {$cfg['site_name']}. Torna a trovarci!";
-      } else {
-        $msg = 'Sei già stato cancellato dalla Newsletter!';
+        $subscribed = false;
       }
-      
-    } else {
+      else {
+        $msg = 'Sei già stato cancellato dalla Newsletter!';
+        $subscribed = false;
+      }
+    } 
+    else {
       $msg = 'Non sei iscritto alla Newsletter!';
+      $subscribed = false;
     }
-    
-  } else {
+  }
+  else {
     $msg = 'Non hai digitato il tuo indirizzo email. Riprova.';
   }
 
 }
+
+?>
+
+<p><?=$msg?></p>
+
+<?php if ($subscribed) { // show the form to unsubscribe ?>
+<form method=POST>
+      <label for="email">Indirizzo email</label>
+      <input id="email" name="email" type="email">
+      <input name="submit" type="submit" value="Cancellami">
+</form>
+<?php } ?>
+

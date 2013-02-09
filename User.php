@@ -89,7 +89,7 @@ class User {
   static function unsubscribe($id) {
     if ($id > 0) {
       $s = self::$db->prepare("UPDATE users SET is_subscribed=0 WHERE id=?");
-      return $s->execute();
+      return $s->execute(array($id));
     }
     return false;
   }
