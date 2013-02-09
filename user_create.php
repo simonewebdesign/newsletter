@@ -16,7 +16,7 @@ if ( isset($_POST['submit']) ) {
   if ( User::create($_POST['email'], $_POST['name'], $_POST['list_id']) ) {
     echo SUCCESS;
   } else {
-    echo FAIL;
+    echo FAIL . " L'Utente non e' stato creato (Probabilmente esiste gia').";
   } 
 }
 

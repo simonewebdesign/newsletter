@@ -2,6 +2,7 @@
 
 include_once 'bootstrap.php';
 include_once 'Lista.php';
+include_once 'User.php';
 
 ################################
 
@@ -10,10 +11,15 @@ include_once 'Lista.php';
 $l = Lista::read($_GET['id']);
 
 if (isset($_POST['submit'])) {
-  if ( Lista::update($_POST['name']) ) {
-    echo SUCCESS;
+  if ( Lista::update($_GET['id'], $_POST['name']) ) {
+    echo SUCCESS; // relativo solo alla lista, non agli utenti
+
+    $list_id = $_GET['id'];
+
+    include 'save_users_in_list.php';
+
   } else {
-    echo FAIL;
+    echo FAIL . " La lista non e' stata aggiornata.";
   }
 }
 
