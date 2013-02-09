@@ -77,6 +77,15 @@ class User {
     return $s->fetchAll(PDO::FETCH_OBJ);
   }
 
+  static function all_where($condition, $limit=0) {
+    $q = "SELECT * FROM users WHERE is_active >= 1 AND $condition";
+    if ( !empty($limit) && is_numeric($limit) ) {
+      $q .= " LIMIT $limit";
+    }
+    $s = self::$db->query($q);
+    return $s->fetchAll(PDO::FETCH_OBJ);
+  }
+
   /* @return bool */
   static function unsubscribe($id) {
     if ($id > 0) {
