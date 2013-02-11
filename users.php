@@ -23,6 +23,8 @@ include_once '_users_table.php';
 
 <?php } ?>
 
+<a href="<?=$cfg['root']?>user_create.php"><?=CREATE_USER?></a>
+
 <?php include_once 'foot.php'; ?>
 
 </body>

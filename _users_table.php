@@ -2,7 +2,7 @@
   
   <thead>
     <tr>
-      <th><?=ID?></th>
+      <th>ID</th>
       <th><?=NAME?></th>
       <th><?=EMAIL?></th>
       <th><?=IS_ACTIVE?></th>
