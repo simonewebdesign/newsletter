@@ -3,6 +3,7 @@
 include_once 'bootstrap.php';
 include_once 'Newsletter.php';
 include_once 'Resource.php';
+include_once 'Template.php';
 
 ################################
 
@@ -12,10 +13,7 @@ include_once '_newsletter_form.php';
 
 if ( isset($_POST['submit']) ) {
 
-  //var_dump($_POST);
-  //var_dump($_FILES);
-
-  if ( Newsletter::create($_POST['subject'], $_POST['description'], $_POST['custom_template_html']) 
+  if ( Newsletter::create($_POST['subject'], $_POST['template_id']) 
        && 
        Resource::create($_FILES['resource'], $db->lastInsertId()) 
      ) {

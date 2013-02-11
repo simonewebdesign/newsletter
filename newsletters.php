@@ -21,7 +21,6 @@ $newsletters = Newsletter::all();
     <tr>
       <th>ID</th>
       <th><?=SUBJECT?></th>
-      <th><?=DESCRIPTION?></th>
       <th><?=CREATED_AT?></th>
       <th><?=UPDATED_AT?></th>
       <th><?=SENT_AT?></th>
@@ -34,9 +33,8 @@ $newsletters = Newsletter::all();
     <tr>
       <td><?=$n->id?></td>
       <td><?=$n->subject?></td>
-      <td><?=$n->description?></td>
       <td><?=date(PHP_DATE, strtotime($n->created_at))?></td>
-      
+                  
       <?php if ($n->updated_at == '0000-00-00 00:00:00') { ?>    
       <td><?=NEVER?></td>
       <?php } else { ?>    

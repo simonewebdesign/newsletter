@@ -3,6 +3,7 @@
 include_once 'bootstrap.php';
 include_once 'Newsletter.php';
 include_once 'Resource.php';
+include_once 'Template.php';
 
 ################################
 
@@ -10,8 +11,7 @@ include_once 'Resource.php';
 
 $n = Newsletter::read($_GET['id']);
 
-$template = file_get_contents('template.html');
-
+include_once 'template_load.php';
 include_once 'template_str_replacement.php';
 
 echo $user_template;
