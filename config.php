@@ -16,13 +16,13 @@ $cfg = array(
 
   # mail settings
   'from_name'           => 'Sender name here',  
-  'from'                => 'sender@email.here',       # mittente (no-reply)
+  'from'                => 'hello@simonewebdesign.it',       # mittente (no-reply)
   
   'reply_to_name'       => 'Recipient name here',
-  'reply_to'            => 'recipient@email.here',
+  'reply_to'            => 'info@simonewebdesign.it',
   
-  'mail'                => array('username' => 'sender@email.here', 'password' => 'secret'),
-  'smtp_server'         => array('main' => 'smtp.example.com', 'backup' => 'smtp2.example.com'),
+  'mail'                => array('username' => 'hello@simonewebdesign.it', 'password' => 'simoservage90'),
+  'smtp_server'         => array('main' => 'smtp1.servage.net', 'backup' => 'smtp2.servage.net'),
   
   /* production database settings
   'hostname'            => '127.0.0.1',
@@ -44,7 +44,7 @@ $cfg = array(
   'limit'               => 300,          # limit of emails to send before refreshing the send.php page
   'word_wrap'           => 50,
   'timeout'             => 10000,        # refresh timeout, in milliseconds.
-  'debug_mode'          => 0,            # enables SMTP debug information (2 for testing)
+  'debug_mode'          => 2,            # enables SMTP debug information (2 for testing)
   'smtp_auth'           => true,
   'charset'             => 'UTF-8',
   'max_allowed_fails'   => 5

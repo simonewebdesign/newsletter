@@ -19,7 +19,7 @@ $newsletters = Newsletter::all();
   
   <thead>
     <tr>
-      <th><?=ID?></th>
+      <th>ID</th>
       <th><?=SUBJECT?></th>
       <th><?=DESCRIPTION?></th>
       <th><?=CREATED_AT?></th>
@@ -67,6 +67,8 @@ $newsletters = Newsletter::all();
 <p><?=NO_NEWSLETTERS?></p>
 
 <?php } ?>
+
+<a href="<?=$cfg['root']?>newsletter_create.php"><?=CREATE_NEWSLETTER?></a>
 
 <?php include_once 'foot.php'; ?>
 

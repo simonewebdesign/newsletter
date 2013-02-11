@@ -1,23 +1,20 @@
 <ul id="menu">
-
   <li>
-    <a href="<?=$cfg['root']?>newsletters.php"><?=MANAGE_NEWSLETTERS?></a>
+    <a href="<?=$cfg['root']?>quick.php"><?=QUICK_SEND?></a>
   </li>
   <li>
-    <a href="<?=$cfg['root']?>lists.php"><?=MANAGE_LISTS?></a>
+    <a href="<?=$cfg['root']?>newsletters.php"><?=NEWSLETTERS?></a>
   </li>
   <li>
-    <a href="<?=$cfg['root']?>users.php"><?=MANAGE_USERS?></a>
-  </li>
-  
-  <li>
-    <a href="<?=$cfg['root']?>newsletter_create.php"><?=CREATE_NEWSLETTER?></a>
+    <a href="<?=$cfg['root']?>lists.php"><?=LISTS?></a>
   </li>
   <li>
-    <a href="<?=$cfg['root']?>list_create.php"><?=CREATE_LIST?></a>
+    <a href="<?=$cfg['root']?>users.php"><?=USERS?></a>
   </li>
   <li>
-    <a href="<?=$cfg['root']?>user_create.php"><?=CREATE_USER?></a>
+    <a href="<?=$cfg['root']?>templates.php"><?=TEMPLATES?></a>
+  </li>  
+  <li>
+    <a href="<?=$cfg['root']?>statistics.php"><?=STATISTICS?></a>
   </li>
-  
 </ul>

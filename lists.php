@@ -19,7 +19,7 @@ $lists = Lista::all();
   
   <thead>
     <tr>
-      <th><?=ID?></th>
+      <th>ID</th>
       <th><?=NAME?></th>
       <th><?=USERS_COUNT?></th>
       <th><?=CREATED_AT?></th>
@@ -59,6 +59,8 @@ $lists = Lista::all();
 <p><?=NO_LISTS?></p>
 
 <?php } ?>
+
+<a href="<?=$cfg['root']?>list_create.php"><?=CREATE_LIST?></a>
 
 <?php include_once 'foot.php'; ?>
 
