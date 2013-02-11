@@ -6,14 +6,13 @@ body {
 
 fieldset {
   border:none;
-  margin-bottom:100px;
 }
 
 input, select, textarea {
   padding:6px 12px;
 }
 
-input, textarea {
+input, textarea, .CodeMirror {
   background:#eee;
   border:1px solid #ccc;
 }
