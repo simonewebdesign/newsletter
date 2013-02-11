@@ -1,10 +1,9 @@
 <?php
 
-//TODO Buggato: da sistemare.
-
 include_once 'bootstrap.php';
 include_once 'Newsletter.php';
 include_once 'Resource.php';
+include_once 'Template.php';
 
 ################################
 
@@ -12,14 +11,16 @@ include_once 'Resource.php';
 
 $n = Newsletter::read($_GET['id']);
 
-  //var_dump($_POST);
-  //var_dump($_FILES);
 if ( isset($_POST['submit']) ) {
-  if ( Newsletter::update($_POST['subject'], $_POST['description']) && 
-       Resource::create($_FILES['resource'], $n->id) ) {
-    echo SUCCESS;
+  if ( Newsletter::update($_GET['id'], $_POST['subject'], $_POST['template_id']) ) {
+    echo SUCCESS . " Dati della newsletter aggiornati. ";
+    if ( Resource::create($_FILES['resource'], $n->id) ) {
+      echo "Nuova immagine aggiunta con successo.";
+    } else {
+      echo "Immagine non aggiornata.";
+    }
   } else {
-    echo FAIL;
+    echo FAIL . " I dati della newsletter non sono stati aggiornati.";
   }
 }
 

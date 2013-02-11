@@ -5,13 +5,12 @@ class Newsletter {
   static $db; # database PDO instance.
 
   /* @return bool */
-  static function create($subject, $description='', $custom_template_html='') {
-    $q = "INSERT INTO newsletters (subject, description, created_at, custom_template_html) VALUES (?,?,?,?)";
+  static function create($subject, $template_id) {
+    $q = "INSERT INTO newsletters (subject, template_id, created_at) VALUES (?,?,?)";
     $sql_data = array(
       $subject,
-      $description,
-      date("Y-m-d H:i:s"), // 2001-03-10 17:16:18 (the MySQL DATETIME format)
-      $custom_template_html
+      $template_id,      
+      date("Y-m-d H:i:s")
     );
     $s = self::$db->prepare($q);
     return $s->execute($sql_data);
@@ -30,12 +29,12 @@ class Newsletter {
   }
   
   /* @return bool */
-  static function update($id, $subject='', $description='') {
+  static function update($id, $subject, $template_id) {
     if ($id > 0) {  
-      $q = "UPDATE newsletters SET subject=?, description=?, updated_at=? WHERE id=?";   
+      $q = "UPDATE newsletters SET subject=?, template_id=?, updated_at=? WHERE id=?";   
       $sql_data = array(
         $subject,
-        $description,
+        $template_id,
         date("Y-m-d H:i:s"), // 2001-03-10 17:16:18 (the MySQL DATETIME format)
         $id
       );

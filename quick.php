@@ -11,25 +11,33 @@ include_once 'Newsletter.php';
 
 <h1>Invio veloce!</h1>
 
-<form action="send.php">
+<style>
+ol li {margin-bottom:50px;}
+</style>
 
-  <fieldset>
-    <legend>1) Scegli la mailing list:</legend>
-    <?php $lists = Lista::all(); include_once '_list_select.php'; ?>
-    <a href="list_create.php">creane una nuova</a>
-  </fieldset>
-  
-  
-  <fieldset>
-    <legend>2) Scegli la newsletter:</legend>
-    <?php $newsletters = Newsletter::all(); include_once '_newsletter_select.php'; ?>
-    <a href="newsletter_create.php">creane una nuova</a>   
-  </fieldset>
-  
-  <fieldset>
-    <legend>3) Fai click!</legend>
-    <input name="send" type="submit" value="<?=SUBMIT?>" class="send">
-  </fieldset>
+<form action="send.php">
+  <ol>
+    
+    <li>
+      Scegli la mailing list
+      <?php $lists = Lista::all(); include_once '_list_select.php'; ?>
+      <a href="list_create.php"><?=CREATE_LIST?></a> |
+      <a href="lists.php"><?=LISTS?></a>
+    </li>
+    
+    <li>
+      Scegli la newsletter
+      <?php $newsletters = Newsletter::all(); include_once '_newsletter_select.php'; ?>
+      <a href="newsletter_create.php"><?=CREATE_NEWSLETTER?></a> |
+      <a href="newsletters.php"><?=NEWSLETTERS?></a>
+    </li>
+    
+    <li>
+      Fai click!
+      <input name="send" type="submit" value="<?=SUBMIT?>" class="send">
+    </li>
+    
+  </ol>
 </form>
 
 <?php include_once 'foot.php';
