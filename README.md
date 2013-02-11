@@ -1,12 +1,10 @@
-NEWSLETTER
-==========
+Applicazione indipendente per l'invio di newsletter
+===================================================
 
-Applicazione indipendente per l'invio di newsletter.
-----------------------------------------------------
+![newsletter database schema](https://raw.github.com/simonewebdesign/newsletter/master/db/schema2.png)
 
-![newsletter database schema](https://raw.github.com/simonewebdesign/newsletter/master/db/schema.png)
+## Descrizione dei file
 
-File                             Descrizione
 - `index.php`                  file principale. effettua un redirect alla root del sito. 
 - `config.php`                 file di configurazione.
 - `db_conn.php`                connessione al database tramite driver PDO.
@@ -32,8 +30,9 @@ File                             Descrizione
     - `user_delete.php`           elimina un singolo user.
     - `_user_form.php`            contiene il form di inserimento/modifica di un utente.
 
+## Entities
 
-Una Newsletter è composta dai seguenti attributi:
+### Una **Newsletter** è composta dai seguenti attributi:
 
 Attributo             Descrizione
 - `id`                id univoco progressivo.
@@ -47,7 +46,7 @@ Attributo             Descrizione
 - `sent_at`           data di invio.
 
 
-Una Resource è composta dai seguenti attributi:
+### Una **Resource** è composta dai seguenti attributi:
 
 Attributo             Descrizione
 - `id`                id univoco progressivo.
@@ -58,11 +57,7 @@ Attributo             Descrizione
 - `newsletter_id`     id della newsletter a cui è associata l'immagine.
 
 
-Newsletter e Resource sono legati dalla seguente relazione:
-`resource belongs_to newsletter`
-
-
-Un User è composto dai seguenti attributi:
+### Un **User** è composto dai seguenti attributi:
 
 Attributo             Descrizione
 - `id`                id univoco progressivo.
@@ -77,19 +72,13 @@ Attributo             Descrizione
 - `list_id`           id della lista a cui appartiene.
 
 
-Una List è composta dai seguenti attributi:
+### Una **List** è composta dai seguenti attributi:
 
 - `id`                id univoco progressivo.
 - `name`              nome descrittivo della lista.
 
 
-User e List sono legati dalla seguente relazione:
-
-`list has_many users`
-`user belongs_to list`
-
-
-Una Entry è composta dai seguenti attributi:
+### Una **Entry** è composta dai seguenti attributi:
 
 Attributo           Descrizione
 - `id`              id univoco progressivo
@@ -100,42 +89,70 @@ Attributo           Descrizione
 - `user_agent`      browser e sistema operativo dell'utente
 
 
+## Relazioni tra le entities
+
+**User** e **List** sono legati dalla seguente relazione:
+
+`list has_many users`
+
+`user belongs_to list`
 
 
-Descrizione funzionamento
--------------------------
+**Newsletter** e **Resource** sono legati dalla seguente relazione:
 
-Chiunque conosca il link di accesso all'applicazione, può effettuare un'azione di tipo **CRUD**+**S** ( **C**reate, **R**ead, **U**pdate, **D**elete + **S**end).
+`resource belongs_to newsletter`
+
+
+**Newsletter** e **Template** sono legati dalla seguente relazione:
+
+`newsletter has_one template`
+
+`template belongs_to newsletter`
+
+
+**Resource** e **Entry** sono legati dalla seguente relazione:
+
+`resource has_many entries`
+
+`entry belongs_to resource`
+
+
+**User** e **Entry** sono legati dalla seguente relazione:
+
+`user has_many entries`
+
+`entry belongs_to user`
+
+
+## Descrizione funzionamento
+
+Chiunque conosca il link di accesso all'applicazione, può effettuare un'azione di tipo **CRUD**+S ( **C**reate, **R**ead, **U**pdate, **D**elete + **S**end).
 Per effettuare un'azione basta entrare nella `index.php` e cliccare su una delle azioni relative ad una singola newsletter, disponibili a destra.
 La newsletter verrà costruita scegliendo titolo, descrizione e parametri.
 La mailing list sarà composta fondamentalmente da nome ed email. Esempio: "Pinco Pallino" <pinco@pallino.net>.
+
 I parametri - almeno per il momento - possono essere solo semplici immagini.
 Il programma consente di inviare una sola newsletter alla volta. Assicurarsi quindi di aver inviato correttamente tutta la newsletter a tutti i destinatari, prima di iniziare un nuovo invio.
+
 Il template si può modificare dal file `template.html`, ed è lo stesso per ogni newsletter. C'è tuttavia la possibilità di creare un template personalizzato per la newsletter dando in input direttamente il codice HTML.
+
 Dalla versione 0.6 è possibile aggiungere un'immagine personalizzata, e il caricamento avviene dinamicamente (non più tramite FTP) e l'immagine viene salvata come Resource nel database, mentre il file binario viene salvato nella cartella `uploads`.
 
+*Update*: ora si possono creare template a piacimento, ed ogni newsletter avra'
+associato un suo template. Naturalmente i template possono essere associati a
+piu' newsletter, ma non e' vero il contrario: una newsletter puo' avere uno
+ed un solo template (tuttavia si puo' sempre cambiare).
 
-Integrazioni future
--------------------
+## Invio veloce (quick.php)
 
-Successivamente sarà possibile salvare più tipi di template, ed ad ogni newsletter sarà possibile associare un template preesistente.
-Relazione di tipo 1 a N
-
-`template has_many newsletters`
-`newsletter belongs_to template`
-
-
-
-### INVIO VELOCE (quick.php)
-
-##### CONSIDERAZIONI
+### Considerazioni
 
 Una newsletter deve prima essere creata per poter essere spedita: servono quindi oggetto e immagine.
 Deve esserci la possibilità di creare un template on-the-fly.
 Anche una lista deve esistere prima di poter spedire la newsletter.
 Deve esserci la possibilità di crearne una on-the-fly.
 
-##### 3 PASSAGGI
+### 3 Passaggi
 
 1. Scegli la mailing list: []
 1,5. oppure creane una nuova (scegli nome e aggiungi indirizzi) -> ti manda a `list_create.php`, e torna indietro.
@@ -146,38 +163,6 @@ Deve esserci la possibilità di crearne una on-the-fly.
 3. Invia.
 
 
-
-### STATISTICHE
+## Statistiche
 
 È possibile leggere statistiche sull'utilizzo della newsletter da parte degli utenti della mailing list, dalla pagina `statistics.php`.
-
-Esempio:
-
-(per ogni newsletter)
-Newsletter N° #{id}                             #{subject}
-Utenti che hanno ricevuto la newsletter:        #{}
-Utenti che hanno letto la newsletter:           #{}
-Utenti che non hanno letto la newsletter:       #{}
-
-
-Lista             Attivi   Non attivi  Totale
-Prova             2
-Test              2239
-Esempio           680
-Totale            2845
-
-
-Browser usage
-Rank Browser         Count
-1.   firefox         230
-2.   chrome          194
-3.   explorer        95
-
-
-Top 10 most active users
-Rank User            Count
-1.   foo@bar.com     12
-2.   john@doe.net    9
-3.   info@example.it 7
-
-
