@@ -34,7 +34,6 @@ Applicazione indipendente per l'invio di newsletter
 
 ### Una **Newsletter** è composta dai seguenti attributi:
 
-Attributo             Descrizione
 - `id`                id univoco progressivo.
 - `title`             titolo della newsletter, che poi sarà l'oggetto della mail.
 - `description`       descrizione.
@@ -48,7 +47,6 @@ Attributo             Descrizione
 
 ### Una **Resource** è composta dai seguenti attributi:
 
-Attributo             Descrizione
 - `id`                id univoco progressivo.
 - `mime_type`         indica la tipologia di media.
 - `path`              indica la posizione sul file system.
@@ -59,7 +57,6 @@ Attributo             Descrizione
 
 ### Un **User** è composto dai seguenti attributi:
 
-Attributo             Descrizione
 - `id`                id univoco progressivo.
 - `name`              nome (o pseudonimo), che poi sarà il destinatario della newsletter.
 - `email`             email del destinatario.
@@ -80,13 +77,22 @@ Attributo             Descrizione
 
 ### Una **Entry** è composta dai seguenti attributi:
 
-Attributo           Descrizione
-- `id`              id univoco progressivo
-- `user_id`         l'utente che ha richiesto la risorsa
-- `resource_id`     la risorsa richiesta dall'utente
+- `id`              id univoco progressivo.
+- `user_id`         l'utente che ha richiesto la risorsa.
+- `resource_id`     la risorsa richiesta dall'utente.
 - `requested_at`    data e ora in cui è stata richiesta la risorsa.
-- `ip_address`      indirizzo IP dell'utente
-- `user_agent`      browser e sistema operativo dell'utente
+- `ip_address`      indirizzo IP dell'utente.
+- `user_agent`      browser e sistema operativo dell'utente.
+
+### Un **Template** è composto dai seguenti attributi:
+
+- `id`              id univoco progressivo.
+- `name`              nome del template.
+- `body`              corpo del template (HTML).
+- `created_at`        data di creazione.
+- `updated_at`        data ultima modifica.
+- `is_deleted`        indica se il template è stato cancellato.
+
 
 
 ## Relazioni tra le entities
