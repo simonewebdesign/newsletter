@@ -37,6 +37,5 @@ Icon?
 ehthumbs.db
 Thumbs.db
 
-# Folders #
-###########
 private
+config.php
