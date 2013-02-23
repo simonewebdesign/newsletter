@@ -1,7 +1,68 @@
-Applicazione indipendente per l'invio di newsletter
-===================================================
+Newsletter campaign management
+==============================
 
 ![newsletter database schema](https://raw.github.com/simonewebdesign/newsletter/master/db/schema2.png)
+
+## Introduction
+
+This is a very simple and light-weight application for newsletter campaign 
+management.
+
+It is studied to be integrated with other existing websites / web applications, so the installation is really straightforward.
+
+
+## Installation - 3 easy steps
+
+1. Upload everything in a subfolder of your web server (i.e. `/newsletter`);
+2. Create the database (you can find the schema in the `/db` directory);
+3. Modify the `config.php` file to fit your needs.
+
+
+## Usage and Features
+
+To get started, you can navigate through `quick.php`. This is the page from 
+where you can send newsletters by just following 3 easy steps. So, if your
+website is `www.example.com` and you installed this application under a 
+`newsletter` folder, you can go to:
+`http://www.example.com/newsletter/quick.php`.
+Please note that the root folder is intended to be **not accessible** 
+by design. This way you shouldn't even need to have an authentication system!
+
+
+Every newsletter has an **HTML template**, that you should create before creating
+the newsletter itself. Instead you can use the default template. All templates
+are stored in the database. When you create a new template, you can see a nice
+HTML editor with a preview that automatically gets updated every time you edit
+the code.
+
+**Placeholders** are available during the template creation: you can inflate the
+users' name and email directly into the markup, among with the site name, URL,
+the current date and other.
+
+A newsletter can have **resources** attached: they're usually just **images** 
+(jpg, png or gif format). These images are treated as **web bugs** (also known as
+[web beacons: you can read more about them in my blog](http://simonewebdesign.it/blog/how-to-create-web-bug-aka-beacon-image/)). This means that the images
+you upload will be used to track users' behavior. You will know exactly who 
+opened the newsletter, the time and how many times it has been viewed (or, in
+other words, *requested*) by every
+single user.
+
+Another cool feature is that you can manage as many **mailing lists** as you want:
+every user will belong to a single mailing list.
+
+Mailing lists can be updated very easily by just copy pasting the addresses in a
+text field and pressing the update button. If you prefer you can always add one
+user at a time. Beware that when you delete a list, all users associated to that
+list will be automatically deleted too.
+
+You are encouraged to **translate** your application into your native language:
+you can do this by creating a new file under the `languages` folder.
+[Pull requests](https://help.github.com/articles/using-pull-requests) are very welcome.
+
+For any questions / problems / suggestions / feature requests, you can open an issue.
+
+[ITA] Applicazione indipendente la gestione di newsletter
+=========================================================
 
 ## Descrizione dei file
 
@@ -135,7 +196,7 @@ Applicazione indipendente per l'invio di newsletter
 Chiunque conosca il link di accesso all'applicazione, può effettuare un'azione di tipo **CRUD**+S ( **C**reate, **R**ead, **U**pdate, **D**elete + **S**end).
 Per effettuare un'azione basta entrare nella `index.php` e cliccare su una delle azioni relative ad una singola newsletter, disponibili a destra.
 La newsletter verrà costruita scegliendo titolo, descrizione e parametri.
-La mailing list sarà composta fondamentalmente da nome ed email. Esempio: "Pinco Pallino" <pinco@pallino.net>.
+La mailing list sarà composta fondamentalmente da nome ed email. Esempio: `"Pinco Pallino" <pinco@pallino.net>`.
 
 I parametri - almeno per il momento - possono essere solo semplici immagini.
 Il programma consente di inviare una sola newsletter alla volta. Assicurarsi quindi di aver inviato correttamente tutta la newsletter a tutti i destinatari, prima di iniziare un nuovo invio.
@@ -147,16 +208,16 @@ Dalla versione 0.6 è possibile aggiungere un'immagine personalizzata, e il cari
 *Update*: ora si possono creare template a piacimento, ed ogni newsletter avra'
 associato un suo template. Naturalmente i template possono essere associati a
 piu' newsletter, ma non e' vero il contrario: una newsletter puo' avere uno
-ed un solo template (tuttavia si puo' sempre cambiare).
+ed un solo template (tuttavia non e' un problema, si puo' sempre cambiare).
 
 ## Invio veloce (quick.php)
 
 ### Considerazioni
 
-Una newsletter deve prima essere creata per poter essere spedita: servono quindi oggetto e immagine.
-Deve esserci la possibilità di creare un template on-the-fly.
-Anche una lista deve esistere prima di poter spedire la newsletter.
-Deve esserci la possibilità di crearne una on-the-fly.
+- Una newsletter deve prima essere creata per poter essere spedita: servono quindi oggetto e immagine.
+- Deve esserci la possibilità di creare un template on-the-fly.
+- Anche una lista deve esistere prima di poter spedire la newsletter.
+- Deve esserci la possibilità di crearne una on-the-fly.
 
 ### 3 Passaggi
 
