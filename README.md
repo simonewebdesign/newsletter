@@ -61,8 +61,8 @@ you can do this by creating a new file under the `languages` folder.
 
 For any questions / problems / suggestions / feature requests, you can open an issue.
 
-[ITA] Applicazione indipendente la gestione di newsletter
-=========================================================
+[ITA] Applicazione indipendente per la gestione di newsletter
+=============================================================
 
 ## Descrizione dei file
 
