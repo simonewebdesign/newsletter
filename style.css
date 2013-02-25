@@ -35,3 +35,17 @@ a {
 a:hover {
   text-decoration:underline;
 }
+
+ul#menu {
+  list-style: none;
+}
+  #menu li {
+    float: left;
+    width: 100px;
+  }
+
+ul#menu:after {
+  content:'';
+  clear:both;
+  display:block;
+}
