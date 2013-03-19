@@ -40,7 +40,7 @@ define('IS_SUBSCRIBED',      'Iscritto');
 # miscellaneous
 define('BACK',               'Torna indietro');
 define('BODY',               'Corpo');
-define('COUNT',              'Numero');
+define('USERS_COUNT',        'Numero iscritti');
 define('DESCRIPTION',        'Descrizione');
 define('EMAIL',              'Email');
 define('EMAIL_ADDRESSES',    'Indirizzi email');

@@ -5,7 +5,7 @@ include_once 'Lista.php';
 
 #########################
 
-$lists = Lista::all();
+$lists = Lista::all_with_users_count();
 
 ?>
 
@@ -33,7 +33,7 @@ $lists = Lista::all();
     <tr>
       <td><?=$l->id?></td>
       <td><?=$l->name?></td>
-      <td><i>non disponibile</i></td>
+      <td><?=$l->users_count?></td>
       <td><?=date(PHP_DATE, strtotime($l->created_at))?></td>
       
       <?php if ($l->updated_at == '0000-00-00 00:00:00') { ?>    
