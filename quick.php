@@ -3,10 +3,8 @@
 include_once 'bootstrap.php';
 include_once 'Lista.php';
 include_once 'Newsletter.php';
-//include_once '.php';
 
 #############################
-
 ?>
 
 <h1><?=QUICK_SEND?></h1>

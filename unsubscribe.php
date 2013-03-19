@@ -51,5 +51,4 @@ if ( !isset($_POST['submit']) ) { // user hasn't submitted the form yet
       <input id="email" name="email" type="email">
       <input name="submit" type="submit" value="Cancellami">
 </form>
-<?php } ?>
-
+<?php }

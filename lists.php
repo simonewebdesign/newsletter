@@ -62,7 +62,4 @@ $lists = Lista::all_with_users_count();
 
 <a href="<?=$cfg['root']?>list_create.php"><?=CREATE ." ". LISTA?></a>
 
-<?php include_once 'foot.php'; ?>
-
-</body>
-</html>
+<?php include_once 'foot.php';

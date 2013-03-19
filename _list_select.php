@@ -1,1 +1,1 @@
-<p>  <label for="list_id"><?=LISTS?></label>  <select id="list_id" name="list_id"><?php foreach ($lists as $list) { ?>    <option value=<?=$list->id?>><?=$list->name?></option><?php } ?>  </select></p>
+<p>  <label for="list_id"><?=LISTS?></label>  <select id="list_id" name="list_id"><?php foreach ($lists as $list) { ?>    <option value=<?=$list->id?>><?=$list->name?></option><?php } ?>  </select></p>

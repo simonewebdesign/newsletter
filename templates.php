@@ -59,7 +59,4 @@ $templates = Template::all();
 
 <a href="<?=$cfg['root']?>template_create.php"><?=CREATE ." ". TEMPLATE?></a>
 
-<?php include_once 'foot.php'; ?>
-
-</body>
-</html>
+<?php include_once 'foot.php';

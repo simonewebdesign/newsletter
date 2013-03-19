@@ -1,6 +1,3 @@
-<footer>
-  <small>Copyright &copy; 2012 - <?=date('Y') ." ". $cfg['site_name']?>. All rights reserved.</small>
-</footer>
 
 <script>
 var deleteAnchors = document.querySelectorAll(".delete");
@@ -27,6 +24,10 @@ for (i = 0; i < sendAnchors.length; i++) {
   });
 }
 </script>
+
+<footer>
+  <small>Copyright &copy; 2012 - <?=date('Y') ." ". $cfg['site_name']?>. All rights reserved.</small>
+</footer>
 
 </body>
 </html>
