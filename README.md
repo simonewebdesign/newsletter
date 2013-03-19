@@ -57,7 +57,7 @@ list will be automatically deleted too.
 
 You are encouraged to **translate** your application into your native language:
 you can do this by creating a new file under the `languages` folder.
-[Pull requests](https://help.github.com/articles/using-pull-requests) are very welcome.
+[Pull requests](https://help.github.com/articles/using-pull-requests) are - of course - very welcome.
 
 For any questions / problems / suggestions / feature requests, you can open an issue.
 
