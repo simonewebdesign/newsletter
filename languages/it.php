@@ -22,11 +22,6 @@ define('TEMPLATES',          'Template');
 # user
 define('USER',               'Utente');
 define('USERS',              'Utenti');
-define('USERS_COUNT',        'Numero utenti');
-define('CREATE_USER',        'Crea nuovo utente');
-define('READ_USER',          'Statistiche utente');
-define('UPDATE_USER',        'Aggiorna dati utente');
-define('DELETE_USER',        'Elimina utente');
 
 # list
 define('LISTA',              'Mailing List');
@@ -45,6 +40,7 @@ define('IS_SUBSCRIBED',      'Iscritto');
 # miscellaneous
 define('BACK',               'Torna indietro');
 define('BODY',               'Corpo');
+define('COUNT',              'Numero');
 define('DESCRIPTION',        'Descrizione');
 define('EMAIL',              'Email');
 define('EMAIL_ADDRESSES',    'Indirizzi email');
