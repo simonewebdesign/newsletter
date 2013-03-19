@@ -20,4 +20,6 @@ if ( isset($_POST['submit']) ) {
 $t = Template::read($_GET['id']);
 include_once '_template_form.php';
 
-?><p><a href="javascript:history.back(1)"><?=BACK?></a></p>
+
+include_once "back.php";
+include_once "foot.php";

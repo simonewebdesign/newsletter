@@ -13,6 +13,6 @@ if ( Newsletter::delete($_GET['id']) ) {
   echo FAIL;
 }
 
-?>
 
-<p><a href="javascript:history.back(1)"><?=BACK?></a></p>
+include_once "back.php";
+include_once "foot.php";

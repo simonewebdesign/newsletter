@@ -26,4 +26,5 @@ if (isset($_POST['submit'])) {
 $l = Lista::read($_GET['id']);
 include_once '_list_form.php';
 
-?><p><a href="<?=$cfg['root']?>lists.php"><?=BACK?></a></p>
+include_once "back.php";
+include_once "foot.php";

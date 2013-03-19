@@ -13,6 +13,5 @@ if ( Lista::delete($_GET['id']) ) {
   echo FAIL;
 }
 
-?>
-
-<p><a href="<?=$cfg['root']?>lists.php"><?=BACK?></a></p>
+include_once "back.php";
+include_once "foot.php";

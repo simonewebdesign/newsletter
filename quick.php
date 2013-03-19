@@ -38,4 +38,5 @@ ol li {margin-bottom:50px;}
   </ol>
 </form>
 
-<?php include_once 'foot.php';
+<?php 
+include_once "foot.php";

@@ -7,6 +7,10 @@ include_once 'User.php';
 
 ?><h1><?=READ ." ". USER?></h1>
 
-<?=NO_DATA?>
 
-<p><a href="javascript:history.back(1)"><?=BACK?></a></p>
+<?php 
+
+echo NO_DATA;
+
+include_once "back.php";
+include_once "foot.php";

@@ -27,4 +27,6 @@ if ( isset($_POST['submit']) ) {
 $n = Newsletter::read($_GET['id']);
 include_once '_newsletter_form.php';
 
-?><p><a href="javascript:history.back(1)"><?=BACK?></a></p>
+
+include_once "back.php";
+include_once "foot.php";

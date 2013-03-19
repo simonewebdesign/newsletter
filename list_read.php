@@ -17,8 +17,7 @@ $users = User::all_where("list_id={$lista->id}");
 <h4>Creata il <?=date(PHP_DATE, strtotime($lista->created_at))?></h4>
 
 <h3>Elenco dei partecipanti</h3>
-<?php include_once '_users_table.php' ?>
+<?php include_once '_users_table.php';
 
-
-
-<p><a href="<?=$cfg['root']?>lists.php"><?=BACK?></a></p>
+include_once "back.php";
+include_once "foot.php";

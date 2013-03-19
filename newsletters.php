@@ -64,8 +64,6 @@ $newsletters = Newsletter::all();
 
 <p><?=NO_DATA?></p>
 
-<?php } ?>
+<?php }
 
-<a href="<?=$cfg['root']?>newsletter_create.php"><?=CREATE ." ". NEWSLETTER?></a>
-
-<?php include_once 'foot.php';
+include_once "foot.php";

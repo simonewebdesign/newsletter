@@ -9,7 +9,7 @@ include_once 'Lista.php';
 $lists = Lista::all();
 $u = User::read($_GET['id']);
 
-?><h1><?=UPDATE_USER?></h1><?php
+?><h1><?=UPDATE ." ". USER?></h1><?php
 
 if ( isset($_POST['submit']) ) {
   if ( User::update($u->id, $_POST['email'], $_POST['name'], $_POST['list_id']) ) {
@@ -22,4 +22,5 @@ if ( isset($_POST['submit']) ) {
 $u = User::read($_GET['id']);
 include_once '_user_form.php';
 
-?><p><a href="javascript:history.back(1)"><?=BACK?></a></p>
+include_once "back.php";
+include_once "foot.php";

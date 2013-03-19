@@ -13,14 +13,14 @@ include_once '_newsletter_form.php';
 
 if ( isset($_POST['submit']) ) {
 
-  if ( Newsletter::create($_POST['subject'], $_POST['template_id']) 
-       && 
-       Resource::create($_FILES['resource'], $db->lastInsertId()) 
-     ) {
+  if ( Newsletter::create($_POST['subject'], $_POST['template_id']) && 
+       Resource::create($_FILES['resource'], $db->lastInsertId()) ) {
     echo SUCCESS;
   } else {
     echo FAIL;
   }
 }
 
-?><p><a href="javascript:history.back(1)"><?=BACK?></a></p>
+
+include_once "back.php";
+include_once "foot.php";
