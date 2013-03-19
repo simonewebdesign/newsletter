@@ -8,7 +8,7 @@ include_once 'Lista.php';
 
 $lists = Lista::all();
 
-?><h1><?=CREATE_USER?></h1><?php
+?><h1><?=CREATE ." ". USER?></h1><?php
 
 include_once '_user_form.php';
 

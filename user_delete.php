@@ -5,7 +5,7 @@ include_once 'User.php';
 
 ################################
 
-?><h1><?=DELETE_USER?></h1><?php
+?><h1><?=DELETE ." ". USER?></h1><?php
 
 if ( User::delete($_GET['id']) ) {
   echo SUCCESS;

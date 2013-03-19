@@ -19,7 +19,7 @@ include_once '_users_table.php';
 
 } else { ?>
 
-<p><?=NO_USERS?></p>
+<p><?=NO_DATA?></p>
 
 <?php } ?>
 

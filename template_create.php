@@ -5,7 +5,7 @@ include_once 'Template.php';
 
 ################################
 
-?><h1><?=CREATE_TEMPLATE?></h1><?php
+?><h1><?=CREATE ." ". TEMPLATE?></h1><?php
 
 include_once '_template_form.php';
 

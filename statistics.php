@@ -34,7 +34,7 @@ GROUP BY lists.id");
 $lists = $lists_db->fetchAll(PDO::FETCH_OBJ);
 ?>
 
-<h1>Statistiche</h1>
+<h1><?=STATISTICS?></h1>
 
   <table>
     <thead>

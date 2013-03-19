@@ -1,5 +1,5 @@
 <footer>
-  <small>Copyright &copy; 2012 - <?=date('Y') . " " . $cfg['site_name']?>. All rights reserved.</small>
+  <small>Copyright &copy; 2012 - <?=date('Y') ." ". $cfg['site_name']?>. All rights reserved.</small>
 </footer>
 
 <script>

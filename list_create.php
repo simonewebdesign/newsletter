@@ -6,7 +6,7 @@ include_once 'User.php';
 
 ################################
 
-?><h1><?=CREATE_LIST?></h1><?php
+?><h1><?=CREATE ." ". LISTA?></h1><?php
 
 include_once '_list_form.php';
 

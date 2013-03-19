@@ -7,7 +7,7 @@ include_once 'Template.php';
 
 ################################
 
-?><h1><?=UPDATE_NEWSLETTER?></h1><?php
+?><h1><?=UPDATE ." ". NEWSLETTER?></h1><?php
 
 $n = Newsletter::read($_GET['id']);
 

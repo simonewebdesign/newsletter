@@ -5,7 +5,7 @@ include_once 'Template.php';
 
 ################################
 
-?><h1><?=UPDATE_TEMPLATE?></h1><?php
+?><h1><?=UPDATE ." ". TEMPLATE?></h1><?php
 
 $t = Template::read($_GET['id']);
 

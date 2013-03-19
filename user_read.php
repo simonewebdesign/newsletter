@@ -5,8 +5,8 @@ include_once 'User.php';
 
 ################################
 
-?><h1><?=READ_USER?></h1>
+?><h1><?=READ ." ". USER?></h1>
 
-Non ci sono dati.
+<?=NO_DATA?>
 
 <p><a href="javascript:history.back(1)"><?=BACK?></a></p>

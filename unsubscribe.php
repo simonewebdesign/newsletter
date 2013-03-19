@@ -1,4 +1,4 @@
-<h1>Cancellazione dalla Newsletter</h1>
+<h1><?=DELETE  ." ". LISTS?></h1>
 
 <?php
 
@@ -47,7 +47,7 @@ if ( !isset($_POST['submit']) ) { // user hasn't submitted the form yet
 
 <?php if ($subscribed) { // show the form to unsubscribe ?>
 <form method=POST>
-      <label for="email">Indirizzo email</label>
+      <label for="email"><?=EMAIL?></label>
       <input id="email" name="email" type="email">
       <input name="submit" type="submit" value="Cancellami">
 </form>

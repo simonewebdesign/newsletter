@@ -40,8 +40,8 @@ $templates = Template::all();
       <td><?=date(PHP_DATE, strtotime($n->updated_at))?></td>    
       <?php } ?>
 
-      <td><a href="<?=$cfg['root']?>template_update.php?id=<?=$n->id?>"><?=UPDATE_TEMPLATE?></a></td>
-      <td><a href="<?=$cfg['root']?>template_delete.php?id=<?=$n->id?>" class="delete"><?=DELETE_TEMPLATE?></a></td>
+      <td><a href="<?=$cfg['root']?>template_update.php?id=<?=$n->id?>"><?=UPDATE?></a></td>
+      <td><a href="<?=$cfg['root']?>template_delete.php?id=<?=$n->id?>" class="delete"><?=DELETE?></a></td>
     </tr>
     <?php } ?>
   </tbody>
@@ -53,11 +53,11 @@ $templates = Template::all();
 
 <?php } else { ?>
 
-<p><?=NO_TEMPLATES?></p>
+<p><?=NO_DATA?></p>
 
 <?php } ?>
 
-<a href="<?=$cfg['root']?>template_create.php"><?=CREATE_TEMPLATE?></a>
+<a href="<?=$cfg['root']?>template_create.php"><?=CREATE ." ". TEMPLATE?></a>
 
 <?php include_once 'foot.php'; ?>
 

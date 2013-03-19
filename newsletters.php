@@ -47,10 +47,10 @@ $newsletters = Newsletter::all();
       <td><?=date(PHP_DATE, strtotime($n->sent_at))?></td>
       <?php } ?>
 
-      <td><a href="<?=$cfg['root']?>newsletter_read.php?id=<?=$n->id?>"><?=READ_NEWSLETTER?></a></td>
-      <td><a href="<?=$cfg['root']?>newsletter_update.php?id=<?=$n->id?>"><?=UPDATE_NEWSLETTER?></a></td>
-      <td><a href="<?=$cfg['root']?>newsletter_delete.php?id=<?=$n->id?>" class="delete"><?=DELETE_NEWSLETTER?></a></td>
-      <td><a href="<?=$cfg['root']?>select_list.php?newsletter_id=<?=$n->id?>" class="send"><?=SEND_NEWSLETTER?></a></td>
+      <td><a href="<?=$cfg['root']?>newsletter_read.php?id=<?=$n->id?>"><?=READ?></a></td>
+      <td><a href="<?=$cfg['root']?>newsletter_update.php?id=<?=$n->id?>"><?=UPDATE?></a></td>
+      <td><a href="<?=$cfg['root']?>newsletter_delete.php?id=<?=$n->id?>" class="delete"><?=DELETE?></a></td>
+      <td><a href="<?=$cfg['root']?>select_list.php?newsletter_id=<?=$n->id?>" class="send"><?=SEND?></a></td>
     </tr>
     <?php } ?>
   </tbody>
@@ -62,11 +62,11 @@ $newsletters = Newsletter::all();
 
 <?php } else { ?>
 
-<p><?=NO_NEWSLETTERS?></p>
+<p><?=NO_DATA?></p>
 
 <?php } ?>
 
-<a href="<?=$cfg['root']?>newsletter_create.php"><?=CREATE_NEWSLETTER?></a>
+<a href="<?=$cfg['root']?>newsletter_create.php"><?=CREATE ." ". NEWSLETTER?></a>
 
 <?php include_once 'foot.php'; ?>
 

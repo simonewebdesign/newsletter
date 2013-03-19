@@ -7,7 +7,7 @@ include_once 'Template.php';
 
 ################################
 
-?><h1><?=CREATE_NEWSLETTER?></h1><?php
+?><h1><?=CREATE ." ". NEWSLETTER?></h1><?php
 
 include_once '_newsletter_form.php';
 

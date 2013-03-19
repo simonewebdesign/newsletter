@@ -42,9 +42,9 @@ $lists = Lista::all();
       <td><?=date(PHP_DATE, strtotime($l->updated_at))?></td>    
       <?php } ?>
 
-      <td><a href="<?=$cfg['root']?>list_read.php?id=<?=$l->id?>"><?=READ_LIST?></a></td>
-      <td><a href="<?=$cfg['root']?>list_update.php?id=<?=$l->id?>"><?=UPDATE_LIST?></a></td>
-      <td><a href="<?=$cfg['root']?>list_delete.php?id=<?=$l->id?>" class="delete"><?=DELETE_LIST?></a></td>
+      <td><a href="<?=$cfg['root']?>list_read.php?id=<?=$l->id?>"><?=READ?></a></td>
+      <td><a href="<?=$cfg['root']?>list_update.php?id=<?=$l->id?>"><?=UPDATE?></a></td>
+      <td><a href="<?=$cfg['root']?>list_delete.php?id=<?=$l->id?>" class="delete"><?=DELETE?></a></td>
     </tr>
     <?php } ?>
   </tbody>
@@ -56,11 +56,11 @@ $lists = Lista::all();
 
 <?php } else { ?>
 
-<p><?=NO_LISTS?></p>
+<p><?=NO_DATA?></p>
 
 <?php } ?>
 
-<a href="<?=$cfg['root']?>list_create.php"><?=CREATE_LIST?></a>
+<a href="<?=$cfg['root']?>list_create.php"><?=CREATE ." ". LISTA?></a>
 
 <?php include_once 'foot.php'; ?>
 

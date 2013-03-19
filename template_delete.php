@@ -5,7 +5,7 @@ include_once 'Template.php';
 
 ################################
 
-?><h1><?=DELETE_TEMPLATE?></h1><?php
+?><h1><?=DELETE ." ". TEMPLATE?></h1><?php
 
 if ( Template::delete($_GET['id']) ) {
   echo SUCCESS;

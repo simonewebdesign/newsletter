@@ -6,7 +6,7 @@ include_once 'User.php';
 
 ################################
 
-?><h1><?=READ_LIST?></h1><?php
+?><h1><?=READ ." ". LISTA?></h1><?php
 
 $lista = Lista::read($_GET['id']);
 $users = User::all_where("list_id={$lista->id}");

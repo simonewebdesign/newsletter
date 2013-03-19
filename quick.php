@@ -9,7 +9,7 @@ include_once 'Newsletter.php';
 
 ?>
 
-<h1>Invio veloce!</h1>
+<h1><?=QUICK_SEND?></h1>
 
 <style>
 ol li {margin-bottom:50px;}
@@ -19,21 +19,21 @@ ol li {margin-bottom:50px;}
   <ol>
     
     <li>
-      Scegli la mailing list
+      <?=CHOOSE ." ". LISTA?>
       <?php $lists = Lista::all(); include_once '_list_select.php'; ?>
-      <a href="list_create.php"><?=CREATE_LIST?></a> |
+      <a href="list_create.php"><?=CREATE?></a> |
       <a href="lists.php"><?=LISTS?></a>
     </li>
     
     <li>
-      Scegli la newsletter
+      <?=CHOOSE ." ". NEWSLETTER?>
       <?php $newsletters = Newsletter::all(); include_once '_newsletter_select.php'; ?>
-      <a href="newsletter_create.php"><?=CREATE_NEWSLETTER?></a> |
+      <a href="newsletter_create.php"><?=CREATE?></a> |
       <a href="newsletters.php"><?=NEWSLETTERS?></a>
     </li>
     
     <li>
-      Fai click!
+      Click!
       <input name="send" type="submit" value="<?=SUBMIT?>" class="send">
     </li>
     

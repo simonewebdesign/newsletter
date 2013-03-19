@@ -6,7 +6,7 @@ include_once 'User.php';
 
 ################################
 
-?><h1><?=UPDATE_LIST?></h1><?php
+?><h1><?=UPDATE ." ". LISTA?></h1><?php
 
 $l = Lista::read($_GET['id']);
 

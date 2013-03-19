@@ -47,9 +47,9 @@
       <td><?=date(PHP_DATE, strtotime($u->last_seen_at))?></td>    
       <?php } ?>
 
-      <td><a href="<?=$cfg['root']?>user_read.php?id=<?=$u->id?>"><?=READ_USER?></a></td>
-      <td><a href="<?=$cfg['root']?>user_update.php?id=<?=$u->id?>"><?=UPDATE_USER?></a></td>
-      <td><a href="<?=$cfg['root']?>user_delete.php?id=<?=$u->id?>" class="delete"><?=DELETE_USER?></a></td>
+      <td><a href="<?=$cfg['root']?>user_read.php?id=<?=$u->id?>"><?=READ?></a></td>
+      <td><a href="<?=$cfg['root']?>user_update.php?id=<?=$u->id?>"><?=UPDATE?></a></td>
+      <td><a href="<?=$cfg['root']?>user_delete.php?id=<?=$u->id?>" class="delete"><?=DELETE?></a></td>
     </tr>
     <?php } ?>
   </tbody>
