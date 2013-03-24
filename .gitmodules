@@ -1,3 +1,6 @@
 [submodule "CodeMirror"]
 	path = CodeMirror
 	url = https://github.com/marijnh/CodeMirror.git
+[submodule "PHPMailer"]
+	path = PHPMailer
+	url = git://github.com/Synchro/PHPMailer.git
