@@ -53,6 +53,7 @@ define('NOT_SET',            'Not set');
 define('PREVIEW',            'Preview');
 define('RESOURCE',           'Image');
 define('RESOURCES',          'Images');
+define('SET_INACTIVE',       'Set as inactive');
 define('STATISTICS',         'Statistics');
 define('SUBJECT',            'Subject');
 define('SUCCESS',            'Success');

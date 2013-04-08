@@ -49,7 +49,7 @@
 
       <td><a href="<?=$cfg['root']?>user_read.php?id=<?=$u->id?>"><?=READ?></a></td>
       <td><a href="<?=$cfg['root']?>user_update.php?id=<?=$u->id?>"><?=UPDATE?></a></td>
-      <td><a href="<?=$cfg['root']?>user_delete.php?id=<?=$u->id?>" class="delete"><?=DELETE?></a></td>
+      <td><a href="<?=$cfg['root']?>user_delete.php?id=<?=$u->id?>" class="delete"><?=SET_INACTIVE?></a></td>
     </tr>
     <?php } ?>
   </tbody>
