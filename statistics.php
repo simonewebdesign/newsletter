@@ -97,6 +97,7 @@ $lists = $lists_db->fetchAll(PDO::FETCH_OBJ);
   </table>
 
 
+<?php if (get_cfg_var('browscap')) { ?>
   <table><caption>Browser usage statistics</caption>
     <thead>
       <tr>
@@ -120,3 +121,4 @@ $lists = $lists_db->fetchAll(PDO::FETCH_OBJ);
 <?php } ?>
     </tbody>
   </table>
+<?php } ?>
