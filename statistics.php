@@ -6,6 +6,14 @@ include_once 'Lista.php';
 
 #########################
 
+$lists_db = $db->query("SELECT lists.`name`,
+(select count(id) from users where list_id= lists.id and users.is_active=1) AS active_users,
+(select count(id) from users where list_id= lists.id) as total_users
+FROM lists
+WHERE lists.is_deleted = 0
+GROUP BY lists.id");
+$lists = $lists_db->fetchAll(PDO::FETCH_OBJ);
+
 $most_active_users_db = $db->query("SELECT
   u.id, u.name, u.email, u.is_active, u.is_subscribed, u.has_received_mail, u.created_at,
   e.id, e.user_id, e.resource_id, e.requested_at, e.ip_address, e.user_agent,
@@ -25,13 +33,6 @@ $browsers_db = $db->query("SELECT user_agent, count(u.id) number_of_users
   ORDER BY number_of_users DESC");
 $browsers = $browsers_db->fetchAll(PDO::FETCH_OBJ);
 
-$lists_db = $db->query("SELECT 
-lists.`name`,
-(select count(id) from users where list_id= lists.id and is_active=1) as active_users,
-(select count(id) from users where list_id= lists.id) as total_users
-from lists
-GROUP BY lists.id");
-$lists = $lists_db->fetchAll(PDO::FETCH_OBJ);
 ?>
 
 <h1><?=STATISTICS?></h1>
