@@ -16,6 +16,7 @@ if ( isset($_POST['submit']) ) {
 
     echo SUCCESS;
     $list_id = $db->lastInsertId();
+    echo "Inserted List ID: $list_id";
     include 'save_users_in_list.php';
 
   } else {
