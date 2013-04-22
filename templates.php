@@ -1,9 +1,6 @@
 <?php
 
 include_once 'bootstrap.php';
-include_once 'Template.php';
-
-#########################
 
 $templates = Template::all();
 

@@ -1,8 +1,6 @@
 <?php
 
-class Newsletter {
-
-  static $db; # database PDO instance.
+class Newsletter extends DBHandler {
 
   /* @return bool */
   static function create($subject, $template_id) {
@@ -76,6 +74,3 @@ class Newsletter {
   }
 
 }
-
-/***** INITIALIZATION *****/
-Newsletter::$db = $db;

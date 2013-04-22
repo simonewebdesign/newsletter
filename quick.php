@@ -1,11 +1,4 @@
-<?php
-
-include_once 'bootstrap.php';
-include_once 'Lista.php';
-include_once 'Newsletter.php';
-
-#############################
-?>
+<?php include_once 'bootstrap.php' ?>
 
 <h1><?=QUICK_SEND?></h1>
 
@@ -38,5 +31,4 @@ ol li {margin-bottom:50px;}
   </ol>
 </form>
 
-<?php 
-include_once "foot.php";
+<?php include_once "foot.php";

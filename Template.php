@@ -1,8 +1,6 @@
 <?php
 
-class Template {
-
-  static $db; # database PDO instance.
+class Template extends DBHandler {
 
   /* @return bool true on success, false on failure. */
   static function create($name, $body) {
@@ -59,6 +57,3 @@ class Template {
   }
 
 }
-
-/***** INITIALIZATION *****/
-Template::$db = $db;

@@ -1,9 +1,7 @@
 <?php
 
-class Resource {
-  
-  static $db; # database PDO instance
-  
+class Resource extends DBHandler {
+
   private static function upload($file) {
     
     $upload_folder_name = 'uploads';
@@ -37,7 +35,6 @@ class Resource {
         }
       }
     }
-    
   }
   
   static function create($file, $newsletter_id) {
@@ -104,6 +101,3 @@ class Resource {
   }
 
 }
-
-/***** INITIALIZATION *****/
-Resource::$db = $db;

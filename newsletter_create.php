@@ -1,13 +1,8 @@
+<?php include_once 'bootstrap.php' ?>
+
+<h1><?=CREATE ." ". NEWSLETTER?></h1>
+
 <?php
-
-include_once 'bootstrap.php';
-include_once 'Newsletter.php';
-include_once 'Resource.php';
-include_once 'Template.php';
-
-################################
-
-?><h1><?=CREATE ." ". NEWSLETTER?></h1><?php
 
 include_once '_newsletter_form.php';
 
@@ -20,7 +15,6 @@ if ( isset($_POST['submit']) ) {
     echo FAIL;
   }
 }
-
 
 include_once "back.php";
 include_once "foot.php";

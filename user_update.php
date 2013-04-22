@@ -1,10 +1,6 @@
 <?php
 
 include_once 'bootstrap.php';
-include_once 'User.php';
-include_once 'Lista.php';
-
-################################
 
 $lists = Lista::all();
 $u = User::read($_GET['id']);

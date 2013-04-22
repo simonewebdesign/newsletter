@@ -1,10 +1,6 @@
 <?php
 
 include_once 'bootstrap.php';
-include_once 'Newsletter.php';
-include_once 'Lista.php';
-
-#########################
 
 $lists_db = $db->query("SELECT lists.`name`,
 (select count(id) from users where list_id= lists.id and users.is_active=1) AS active_users,

@@ -1,12 +1,8 @@
+<?php include_once 'bootstrap.php' ?>
+
+<h1><?=UPDATE ." ". LISTA?></h1>
+
 <?php
-
-include_once 'bootstrap.php';
-include_once 'Lista.php';
-include_once 'User.php';
-
-################################
-
-?><h1><?=UPDATE ." ". LISTA?></h1><?php
 
 $l = Lista::read($_GET['id']);
 

@@ -1,11 +1,6 @@
 <?php
 
 include_once 'bootstrap.php';
-include_once 'Newsletter.php';
-include_once 'Resource.php';
-include_once 'Template.php';
-
-################################
 
 $n = Newsletter::read($_GET['id']);
 

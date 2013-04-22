@@ -1,9 +1,6 @@
 <?php
 
 include_once 'bootstrap.php';
-include_once 'User.php';
-
-################################
 
 ?><h1><?=READ ." ". USER?></h1>
 

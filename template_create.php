@@ -1,9 +1,6 @@
 <?php
 
 include_once 'bootstrap.php';
-include_once 'Template.php';
-
-################################
 
 ?><h1><?=CREATE ." ". TEMPLATE?></h1><?php
 
@@ -17,7 +14,6 @@ if ( isset($_POST['submit']) ) {
     echo FAIL . " Template non creato.";
   }
 }
-
 
 include_once "back.php";
 include_once "foot.php";

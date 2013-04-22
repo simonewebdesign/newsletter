@@ -1,9 +1,6 @@
 <?php
 
 include_once 'bootstrap.php';
-include_once 'Lista.php';
-
-#########################
 
 $lists = Lista::all_with_users_count();
 

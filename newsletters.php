@@ -1,9 +1,4 @@
-<?php
-
-include_once 'bootstrap.php';
-include_once 'Newsletter.php';
-
-#########################
+<?php include_once 'bootstrap.php';
 
 $newsletters = Newsletter::all();
 

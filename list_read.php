@@ -1,12 +1,8 @@
+<?php include_once 'bootstrap.php' ?>
+
+<h1><?=READ ." ". LISTA?></h1>
+
 <?php
-
-include_once 'bootstrap.php';
-include_once 'Lista.php';
-include_once 'User.php';
-
-################################
-
-?><h1><?=READ ." ". LISTA?></h1><?php
 
 $lista = Lista::read($_GET['id']);
 $users = User::all_where("list_id={$lista->id}");

@@ -1,21 +1,17 @@
 <?php
 
 class User {
-
-  static $db; # database PDO instance.
   
   static function create($email, $name='', $list_id=0) {
-//    if ($list_id > 0) {
-      $q = "INSERT INTO users (name, email, created_at, list_id) VALUES (?,?,?,?)";
-      $sql_data = array(
-        $name,
-        $email,
-        date("Y-m-d H:i:s"), // 2001-03-10 17:16:18 (the MySQL DATETIME format)
-        $list_id
-      );
-      $s = self::$db->prepare($q);
-      return $s->execute($sql_data);
-//    }
+    $q = "INSERT INTO users (name, email, created_at, list_id) VALUES (?,?,?,?)";
+    $sql_data = array(
+      $name,
+      $email,
+      date("Y-m-d H:i:s"), // 2001-03-10 17:16:18 (the MySQL DATETIME format)
+      $list_id
+    );
+    $s = self::$db->prepare($q);
+    return $s->execute($sql_data);
   }
   
   static function read($id) {
@@ -143,6 +139,3 @@ class User {
   }
   
 }
-
-/***** INITIALIZATION *****/
-User::$db = $db;

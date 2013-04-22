@@ -1,13 +1,8 @@
+<?php include_once 'bootstrap.php' ?>
+
+<h1><?=UPDATE ." ". NEWSLETTER?></h1>
+
 <?php
-
-include_once 'bootstrap.php';
-include_once 'Newsletter.php';
-include_once 'Resource.php';
-include_once 'Template.php';
-
-################################
-
-?><h1><?=UPDATE ." ". NEWSLETTER?></h1><?php
 
 $n = Newsletter::read($_GET['id']);
 
@@ -26,7 +21,6 @@ if ( isset($_POST['submit']) ) {
 
 $n = Newsletter::read($_GET['id']);
 include_once '_newsletter_form.php';
-
 
 include_once "back.php";
 include_once "foot.php";
