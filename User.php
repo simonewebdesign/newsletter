@@ -1,6 +1,6 @@
 <?php
 
-class User {
+class User extends DBHandler {
   
   static function create($email, $name='', $list_id=0) {
     $q = "INSERT INTO users (name, email, created_at, list_id) VALUES (?,?,?,?)";
