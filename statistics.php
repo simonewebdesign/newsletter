@@ -7,7 +7,6 @@ $lists_db = $db->query("SELECT lists.`name`,
 (select count(id) from users where list_id= lists.id) as total_users
 FROM lists
 WHERE lists.is_deleted = 0
-AND count(users.id) > 0
 GROUP BY lists.id");
 $lists = $lists_db->fetchAll(PDO::FETCH_OBJ);
 
