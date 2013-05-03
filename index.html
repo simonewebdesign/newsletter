@@ -3,31 +3,34 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
     <title>PHP Newsletter by simonewebdesign</title>
   </head>
 
   <body>
-    <header>
+    <div id="container">
       <div class="inner">
-        <h1>PHP Newsletter</h1>
-        <h2>Stand-alone web application for newsletter campaign management.</h2>
-        <a href="https://github.com/simonewebdesign/newsletter" class="button"><small>View project on</small>GitHub</a>
-      </div>
-    </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
+        <header>
+          <h1>PHP Newsletter</h1>
+          <h2>Web application for newsletter campaign management.</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/simonewebdesign/newsletter/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/simonewebdesign/newsletter/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/simonewebdesign/newsletter" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
           <h2>Introduction</h2>
 
 <p>This is a very simple and light-weight application for newsletter campaign 
@@ -76,257 +79,15 @@ every user will belong to a single mailing list.</p>
 text field and pressing the update button. If you prefer you can always add one
 user at a time. Beware that when you delete a list, all users associated to that
 list will be automatically deleted too.</p>
-
-<p>You are encouraged to <strong>translate</strong> your application into your native language:
-you can do this by creating a new file under the <code>languages</code> folder.
-<a href="https://help.github.com/articles/using-pull-requests">Pull requests</a> are - of course - very welcome.</p>
-
-<p>For any questions / problems / suggestions / feature requests, you can open an issue.</p>
-
-<hr><h1>[ITA] Applicazione indipendente per la gestione di newsletter</h1>
-
-<p><img src="https://raw.github.com/simonewebdesign/newsletter/master/db/schema2.png" alt="newsletter database schema"></p>
-
-<h2>Descrizione dei file</h2>
-
-<ul>
-<li>
-<code>index.php</code>                  file principale. effettua un redirect alla root del sito. </li>
-<li>
-<code>config.php</code>                 file di configurazione.</li>
-<li>
-<code>db_conn.php</code>                connessione al database tramite driver PDO.</li>
-<li>
-<code>template.html</code>              template della newsletter.</li>
-<li>
-<code>send.php</code>                   processa l'invio di una singola newsletter.</li>
-<li>
-<code>subscribe.php</code>              form per l'iscrizione alla newsletter.</li>
-<li>
-<code>unsubscribe.php</code>            form per cancellare l'iscrizione alla newsletter.</li>
-<li><p><code>statistics.php</code>             statistiche generali sulle newsletter inviate.</p></li>
-<li>
-<p><code>Newsletter.php</code>             classe Newsletter.</p>
-
-<ul>
-<li>
-<code>newsletters.php</code>           mostra le newsletter.</li>
-<li>
-<code>newsletter_create.php</code>     crea una nuova newsletter.</li>
-<li>
-<code>newsletter_read.php</code>       mostra il contenuto in anteprima di una singola newsletter.</li>
-<li>
-<code>newsletter_update.php</code>     aggiorna il contenuto di una singola newsletter.</li>
-<li>
-<code>newsletter_delete.php</code>     elimina una singola newsletter.</li>
-<li>
-<code>_newsletter_form.php</code>      contiene il form di inserimento/modifica di una newsletter.</li>
-</ul>
-</li>
-<li>
-<p><code>User.php</code>                   classe User.</p>
-
-<ul>
-<li>
-<code>users.php</code>                 mostra la mailing list.</li>
-<li>
-<code>user_create.php</code>           crea un nuovo user.</li>
-<li>
-<code>user_read.php</code>             mostra i dati di un singolo user.</li>
-<li>
-<code>user_update.php</code>           aggiorna i dati di un singolo user.</li>
-<li>
-<code>user_delete.php</code>           elimina un singolo user.</li>
-<li>
-<code>_user_form.php</code>            contiene il form di inserimento/modifica di un utente.</li>
-</ul>
-</li>
-</ul><h2>Entities</h2>
-
-<h3>Una <strong>Newsletter</strong> è composta dai seguenti attributi:</h3>
-
-<ul>
-<li>
-<code>id</code>                id univoco progressivo.</li>
-<li>
-<code>title</code>             titolo della newsletter, che poi sarà l'oggetto della mail.</li>
-<li>
-<code>description</code>       descrizione.</li>
-<li>
-<code>is_sent</code>           indica se la newsletter è già stata spedita.</li>
-<li>
-<code>is_deleted</code>        indica se la newsletter è stata cancellata.</li>
-<li>
-<code>params</code>            elementi della newsletter.</li>
-<li>
-<code>created_at</code>        data di creazione.</li>
-<li>
-<code>updated_at</code>        data ultima modifica.</li>
-<li>
-<code>sent_at</code>           data di invio.</li>
-</ul><h3>Una <strong>Resource</strong> è composta dai seguenti attributi:</h3>
-
-<ul>
-<li>
-<code>id</code>                id univoco progressivo.</li>
-<li>
-<code>mime_type</code>         indica la tipologia di media.</li>
-<li>
-<code>path</code>              indica la posizione sul file system.</li>
-<li>
-<code>created_at</code>        data di creazione.</li>
-<li>
-<code>updated_at</code>        data ultima modifica.</li>
-<li>
-<code>newsletter_id</code>     id della newsletter a cui è associata l'immagine.</li>
-</ul><h3>Un <strong>User</strong> è composto dai seguenti attributi:</h3>
-
-<ul>
-<li>
-<code>id</code>                id univoco progressivo.</li>
-<li>
-<code>name</code>              nome (o pseudonimo), che poi sarà il destinatario della newsletter.</li>
-<li>
-<code>email</code>             email del destinatario.</li>
-<li>
-<code>is_active</code>         indica se l'utente è attivo o se è stato cancellato.</li>
-<li>
-<code>is_subscribed</code>     indica se l'utente è iscritto alla newsletter.</li>
-<li>
-<code>has_received_mail</code> indica se l'utente ha già ricevuto la newsletter.</li>
-<li>
-<code>created_at</code>        data di creazione.</li>
-<li>
-<code>updated_at</code>        data ultima modifica.</li>
-<li>
-<code>last_seen_at</code>      data dell'ultima volta che l'utente ha letto la newsletter.</li>
-<li>
-<code>list_id</code>           id della lista a cui appartiene.</li>
-</ul><h3>Una <strong>List</strong> è composta dai seguenti attributi:</h3>
-
-<ul>
-<li>
-<code>id</code>                id univoco progressivo.</li>
-<li>
-<code>name</code>              nome descrittivo della lista.</li>
-</ul><h3>Una <strong>Entry</strong> è composta dai seguenti attributi:</h3>
-
-<ul>
-<li>
-<code>id</code>              id univoco progressivo.</li>
-<li>
-<code>user_id</code>         l'utente che ha richiesto la risorsa.</li>
-<li>
-<code>resource_id</code>     la risorsa richiesta dall'utente.</li>
-<li>
-<code>requested_at</code>    data e ora in cui è stata richiesta la risorsa.</li>
-<li>
-<code>ip_address</code>      indirizzo IP dell'utente.</li>
-<li>
-<code>user_agent</code>      browser e sistema operativo dell'utente.</li>
-</ul><h3>Un <strong>Template</strong> è composto dai seguenti attributi:</h3>
-
-<ul>
-<li>
-<code>id</code>              id univoco progressivo.</li>
-<li>
-<code>name</code>              nome del template.</li>
-<li>
-<code>body</code>              corpo del template (HTML).</li>
-<li>
-<code>created_at</code>        data di creazione.</li>
-<li>
-<code>updated_at</code>        data ultima modifica.</li>
-<li>
-<code>is_deleted</code>        indica se il template è stato cancellato.</li>
-</ul><h2>Relazioni tra le entities</h2>
-
-<p><strong>User</strong> e <strong>List</strong> sono legati dalla seguente relazione:</p>
-
-<p><code>list has_many users</code></p>
-
-<p><code>user belongs_to list</code></p>
-
-<p><strong>Newsletter</strong> e <strong>Resource</strong> sono legati dalla seguente relazione:</p>
-
-<p><code>resource belongs_to newsletter</code></p>
-
-<p><strong>Newsletter</strong> e <strong>Template</strong> sono legati dalla seguente relazione:</p>
-
-<p><code>newsletter has_one template</code></p>
-
-<p><code>template belongs_to newsletter</code></p>
-
-<p><strong>Resource</strong> e <strong>Entry</strong> sono legati dalla seguente relazione:</p>
-
-<p><code>resource has_many entries</code></p>
-
-<p><code>entry belongs_to resource</code></p>
-
-<p><strong>User</strong> e <strong>Entry</strong> sono legati dalla seguente relazione:</p>
-
-<p><code>user has_many entries</code></p>
-
-<p><code>entry belongs_to user</code></p>
-
-<h2>Descrizione funzionamento</h2>
-
-<p>Chiunque conosca il link di accesso all'applicazione, può effettuare un'azione di tipo <strong>CRUD</strong>+S ( <strong>C</strong>reate, <strong>R</strong>ead, <strong>U</strong>pdate, <strong>D</strong>elete + <strong>S</strong>end).
-Per effettuare un'azione basta entrare nella <code>index.php</code> e cliccare su una delle azioni relative ad una singola newsletter, disponibili a destra.
-La newsletter verrà costruita scegliendo titolo, descrizione e parametri.
-La mailing list sarà composta fondamentalmente da nome ed email. Esempio: <code>"Pinco Pallino" &lt;pinco@pallino.net&gt;</code>.</p>
-
-<p>I parametri - almeno per il momento - possono essere solo semplici immagini.
-Il programma consente di inviare una sola newsletter alla volta. Assicurarsi quindi di aver inviato correttamente tutta la newsletter a tutti i destinatari, prima di iniziare un nuovo invio.</p>
-
-<p>Il template si può modificare dal file <code>template.html</code>, ed è lo stesso per ogni newsletter. C'è tuttavia la possibilità di creare un template personalizzato per la newsletter dando in input direttamente il codice HTML.</p>
-
-<p>Dalla versione 0.6 è possibile aggiungere un'immagine personalizzata, e il caricamento avviene dinamicamente (non più tramite FTP) e l'immagine viene salvata come Resource nel database, mentre il file binario viene salvato nella cartella <code>uploads</code>.</p>
-
-<p><em>Update</em>: ora si possono creare template a piacimento, ed ogni newsletter avra'
-associato un suo template. Naturalmente i template possono essere associati a
-piu' newsletter, ma non e' vero il contrario: una newsletter puo' avere uno
-ed un solo template (tuttavia non e' un problema, si puo' sempre cambiare).</p>
-
-<h2>Invio veloce (quick.php)</h2>
-
-<h3>Considerazioni</h3>
-
-<ul>
-<li>Una newsletter deve prima essere creata per poter essere spedita: servono quindi oggetto e immagine.</li>
-<li>Deve esserci la possibilità di creare un template on-the-fly.</li>
-<li>Anche una lista deve esistere prima di poter spedire la newsletter.</li>
-<li>Deve esserci la possibilità di crearne una on-the-fly.</li>
-</ul><h3>3 Passaggi</h3>
-
-<ol>
-<li><p>Scegli la mailing list: []
-1,5. oppure creane una nuova (scegli nome e aggiungi indirizzi) -&gt; ti manda a <code>list_create.php</code>, e torna indietro.</p></li>
-<li><p>Scegli la newsletter: []
-2,5. oppure creane una nuova (scegli oggetto, carica immagine e facoltativamente incolla codice HTML) --&gt; ti manda a <code>newsletter_create.php</code>, e torna indietro.</p></li>
-<li><p>Invia.</p></li>
-</ol><h2>Statistiche</h2>
-
-<p>È possibile leggere statistiche sull'utilizzo della newsletter da parte degli utenti della mailing list, dalla pagina <code>statistics.php</code>.</p>
         </section>
 
-        <aside id="sidebar">
-          <a href="https://github.com/simonewebdesign/newsletter/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/simonewebdesign/newsletter/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+        <footer>
+          PHP Newsletter is maintained by <a href="https://github.com/simonewebdesign">simonewebdesign</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
 
-          <p class="repo-owner"><a href="https://github.com/simonewebdesign/newsletter"></a> is maintained by <a href="https://github.com/simonewebdesign">simonewebdesign</a>.</p>
-
-          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
+        
       </div>
     </div>
-
-  
   </body>
 </html>
