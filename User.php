@@ -3,13 +3,8 @@
 class User extends DBHandler {
   
   static function create($email, $name='', $list_id=0) {
-    $q = "INSERT INTO users (name, email, created_at, list_id) VALUES (?,?,?,?)";
-    $sql_data = array(
-      $name,
-      $email,
-      date("Y-m-d H:i:s"), // 2001-03-10 17:16:18 (the MySQL DATETIME format)
-      $list_id
-    );
+    $q = "INSERT INTO users (name, email, created_at, list_id) VALUES (?,?,NOW(),?)";
+    $sql_data = array($name, $email, $list_id);
     $s = self::$db->prepare($q);
     return $s->execute($sql_data);
   }
@@ -27,14 +22,8 @@ class User extends DBHandler {
   
   static function update($id, $email='', $name='', $list_id=0) {
     if ($id > 0 && $list_id > 0) {
-      $q = "UPDATE users SET email=?, name=?, updated_at=?, list_id=? WHERE id=?";   
-      $sql_data = array(
-        $email,
-        $name,
-        date("Y-m-d H:i:s"), // 2001-03-10 17:16:18 (the MySQL DATETIME format)
-        $list_id,
-        $id
-      );
+      $q = "UPDATE users SET email=?, name=?, updated_at=NOW(), list_id=? WHERE id=?";   
+      $sql_data = array($email, $name, $list_id, $id);
       $s = self::$db->prepare($q);
       return $s->execute($sql_data);
     }
@@ -101,7 +90,8 @@ class User extends DBHandler {
     return false;
   }
 
-  /* questo metodo recupera tutti gli users a cui non è ancora stata spedita la newsletter, in una determinata mailing list. 
+  /* questo metodo recupera tutti gli users a cui non è ancora stata spedita
+   la newsletter, in una determinata mailing list. 
   @return array of users on success, false otherwhise.
   */
   static function toBeSent($limit, $list_id) {

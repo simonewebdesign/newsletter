@@ -4,12 +4,8 @@ class Template extends DBHandler {
 
   /* @return bool true on success, false on failure. */
   static function create($name, $body) {
-    $q = "INSERT INTO templates (name, body, created_at) VALUES (?,?,?)";
-    $sql_data = array(
-      $name,
-      $body,
-      date("Y-m-d H:i:s")
-    );
+    $q = "INSERT INTO templates (name, body, created_at) VALUES (?,?,NOW())";
+    $sql_data = array($name, $body);
     $s = self::$db->prepare($q);
     return $s->execute($sql_data);
   }
@@ -27,13 +23,8 @@ class Template extends DBHandler {
   /* @return bool true on success, false on failure. */
   static function update($id, $name, $body) {
     if ($id > 0) {  
-      $q = "UPDATE templates SET name=?, body=?, updated_at=? WHERE id=?";   
-      $sql_data = array(
-        $name,
-        $body,
-        date("Y-m-d H:i:s"),
-        $id
-      );
+      $q = "UPDATE templates SET name=?, body=?, updated_at=NOW() WHERE id=?";   
+      $sql_data = array($name, $body, $id);
       $s = self::$db->prepare($q);
       return $s->execute($sql_data);
     }

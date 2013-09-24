@@ -4,12 +4,8 @@ class Newsletter extends DBHandler {
 
   /* @return bool */
   static function create($subject, $template_id) {
-    $q = "INSERT INTO newsletters (subject, template_id, created_at) VALUES (?,?,?)";
-    $sql_data = array(
-      $subject,
-      $template_id,      
-      date("Y-m-d H:i:s")
-    );
+    $q = "INSERT INTO newsletters (subject, template_id, created_at) VALUES (?,?,NOW())";
+    $sql_data = array($subject, $template_id);
     $s = self::$db->prepare($q);
     return $s->execute($sql_data);
   }
@@ -29,13 +25,8 @@ class Newsletter extends DBHandler {
   /* @return bool */
   static function update($id, $subject, $template_id) {
     if ($id > 0) {  
-      $q = "UPDATE newsletters SET subject=?, template_id=?, updated_at=? WHERE id=?";   
-      $sql_data = array(
-        $subject,
-        $template_id,
-        date("Y-m-d H:i:s"), // 2001-03-10 17:16:18 (the MySQL DATETIME format)
-        $id
-      );
+      $q = "UPDATE newsletters SET subject=?, template_id=?, updated_at=NOW() WHERE id=?";   
+      $sql_data = array($subject, $template_id, $id);
       $s = self::$db->prepare($q);
       return $s->execute($sql_data);
     }
@@ -55,12 +46,8 @@ class Newsletter extends DBHandler {
   /* @return bool */
   static function send($id) {
     if ($id > 0) {
-      $q = "UPDATE newsletters SET is_sent=?, sent_at=? WHERE id=?";
-      $sql_data = array(
-        1,
-        date("Y-m-d H:i:s"), // 2001-03-10 17:16:18 (the MySQL DATETIME format)
-        $id
-      );
+      $q = "UPDATE newsletters SET is_sent=?, sent_at=NOW() WHERE id=?";
+      $sql_data = array(1, $id);
       $s = self::$db->prepare($q);
       return $s->execute($sql_data);
     }

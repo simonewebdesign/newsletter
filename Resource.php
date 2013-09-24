@@ -43,12 +43,11 @@ class Resource extends DBHandler {
       $upload_path = self::upload($file);
       
       // Inserting resource into database
-      $q = "INSERT INTO resources (mime_type, path, created_at, newsletter_id) VALUES (?,?,?,?)";
+      $q = "INSERT INTO resources (mime_type, path, created_at, newsletter_id) VALUES (?,?,NOW(),?)";
 
       $sql_data = array(
         $file['type'], // TODO qui c'è da modificare il path per far funzionare il tracciamento.
         $upload_path,
-        date("Y-m-d H:i:s"), // 2001-03-10 17:16:18 (the MySQL DATETIME format)
         $newsletter_id
       );
       
