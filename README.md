@@ -15,7 +15,7 @@ It is studied to be integrated with other existing websites / web applications, 
 
 1. Upload everything in a subfolder of your web server (i.e. `/newsletter`);
 2. Create the database (you can find the schema in the `/db` directory);
-3. Modify the `config.php` file to fit your needs.
+3. Rename `config_sample.php` to `config.php` and change it to fit your needs.
 
 
 ## Usage and Features
