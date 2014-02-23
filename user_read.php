@@ -5,7 +5,7 @@ include_once 'bootstrap.php';
 ?><h1><?=READ ." ". USER?></h1>
 
 
-<?php 
+<?php
 
 echo NO_DATA;
 

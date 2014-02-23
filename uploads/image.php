@@ -32,12 +32,12 @@ if( headers_sent() ) {
 
 //var_dump( file_exists($filename) );
 if ( file_exists($filename) ){
- 
+
   // Parse Info / Get Extension
   $fsize = filesize($filename);
   $path_parts = pathinfo($filename); // to get extension
-  $ext = strtolower($path_parts["extension"]); 
-  
+  $ext = strtolower($path_parts["extension"]);
+
   // Determine Content Type
   switch ($ext) {
     case "gif": $ctype="image/gif"; break;
@@ -49,7 +49,7 @@ if ( file_exists($filename) ){
 
   header("Content-Type: $ctype");
 //  header("Content-Transfer-Encoding: binary"); // remember to upload images in binary mode!
-  
+
   ob_clean();
   flush();
   readfile($filename);
@@ -57,5 +57,5 @@ if ( file_exists($filename) ){
 } else {
   header('HTTP/1.1 404 Not Found');
   die("<h1>404 - File Not Found</h1><p>$filename was not found on this server.</p>");
-  
+
 }

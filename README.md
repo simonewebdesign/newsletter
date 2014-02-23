@@ -5,7 +5,7 @@ Newsletter campaign management
 
 ## Introduction
 
-This is a very simple and light-weight application for newsletter campaign 
+This is a very simple and light-weight application for newsletter campaign
 management.
 
 It is studied to be integrated with other existing websites / web applications, so the installation is really straightforward.
@@ -20,12 +20,12 @@ It is studied to be integrated with other existing websites / web applications, 
 
 ## Usage and Features
 
-To get started, you can navigate through `quick.php`. This is the page from 
+To get started, you can navigate through `quick.php`. This is the page from
 where you can send newsletters by just following 3 easy steps. So, if your
-website is `www.example.com` and you installed this application under a 
+website is `www.example.com` and you installed this application under a
 `newsletter` folder, you can go to:
 `http://www.example.com/newsletter/quick.php`.
-Please note that the root folder is intended to be **not accessible** 
+Please note that the root folder is intended to be **not accessible**
 by design. This way you shouldn't even need to have an authentication system!
 
 
@@ -39,10 +39,10 @@ the code.
 users' name and email directly into the markup, among with the site name, URL,
 the current date and other.
 
-A newsletter can have **resources** attached: they're usually just **images** 
+A newsletter can have **resources** attached: they're usually just **images**
 (jpg, png or gif format). These images are treated as **web bugs** (also known as
 [web beacons: you can read more about them in my blog](http://simonewebdesign.it/blog/how-to-create-web-bug-aka-beacon-image/)). This means that the images
-you upload will be used to track users' behavior. You will know exactly who 
+you upload will be used to track users' behavior. You will know exactly who
 opened the newsletter, the time and how many times it has been viewed (or, in
 other words, *requested*) by every
 single user.
@@ -66,7 +66,7 @@ For any questions / problems / suggestions / feature requests, you can open an i
 
 ## Descrizione dei file
 
-- `index.php`                  file principale. effettua un redirect alla root del sito. 
+- `index.php`                  file principale. effettua un redirect alla root del sito.
 - `config.php`                 file di configurazione.
 - `db_conn.php`                connessione al database tramite driver PDO.
 - `template.html`              template della newsletter.
@@ -82,7 +82,7 @@ For any questions / problems / suggestions / feature requests, you can open an i
     - `newsletter_update.php`     aggiorna il contenuto di una singola newsletter.
     - `newsletter_delete.php`     elimina una singola newsletter.
     - `_newsletter_form.php`      contiene il form di inserimento/modifica di una newsletter.
-    
+
 - `User.php`                   classe User.
     - `users.php`                 mostra la mailing list.
     - `user_create.php`           crea un nuovo user.

@@ -1,14 +1,14 @@
 <?php
 
 class User extends DBHandler {
-  
+
   static function create($email, $name='', $list_id=0) {
     $q = "INSERT INTO users (name, email, created_at, list_id) VALUES (?,?,NOW(),?)";
     $sql_data = array($name, $email, $list_id);
     $s = self::$db->prepare($q);
     return $s->execute($sql_data);
   }
-  
+
   static function read($id) {
     if ($id > 0) {
       $q = "SELECT * FROM users WHERE id=?";
@@ -19,26 +19,26 @@ class User extends DBHandler {
     }
     return false;
   }
-  
+
   static function update($id, $email='', $name='', $list_id=0) {
     if ($id > 0 && $list_id > 0) {
-      $q = "UPDATE users SET email=?, name=?, updated_at=NOW(), list_id=? WHERE id=?";   
+      $q = "UPDATE users SET email=?, name=?, updated_at=NOW(), list_id=? WHERE id=?";
       $sql_data = array($email, $name, $list_id, $id);
       $s = self::$db->prepare($q);
       return $s->execute($sql_data);
     }
     return false;
   }
-  
+
   static function delete($id) {
-    if ($id > 0) {  
+    if ($id > 0) {
       $q = "UPDATE users SET is_active=0 WHERE id=?";
       $s = self::$db->prepare($q);
       return $s->execute(array($id));
     }
     return false;
   }
-  
+
   static function setMailAsReceived($id) {
     if ($id > 0) {
       $q = "UPDATE users SET has_received_mail=1 WHERE id=?";
@@ -47,7 +47,7 @@ class User extends DBHandler {
     }
     return false;
   }
-  
+
   static function resetFetch() {
     return self::$db->exec("UPDATE users SET has_received_mail=0, fails=0");
   }
@@ -78,7 +78,7 @@ class User extends DBHandler {
     }
     return false;
   }
-  
+
   /* @return the record from db, false otherwise. */
   static function findByEmail($email) {
     if (!empty($email)) {
@@ -91,17 +91,17 @@ class User extends DBHandler {
   }
 
   /* questo metodo recupera tutti gli users a cui non è ancora stata spedita
-   la newsletter, in una determinata mailing list. 
+   la newsletter, in una determinata mailing list.
   @return array of users on success, false otherwhise.
   */
   static function toBeSent($limit, $list_id) {
-  
+
     $q = "SELECT u.id, u.name, u.email,	u.is_active, u.is_subscribed, u.has_received_mail, u.created_at, u.updated_at, u.last_seen_at FROM users AS u INNER JOIN lists ON lists.id = u.list_id WHERE is_active >= 1 AND is_subscribed >= 1 AND has_received_mail <= 0 AND lists.id=?";
-    
+
     if ( !empty($limit) && is_numeric($limit) ) {
       $q .= " LIMIT $limit";
     }
-    
+
     $s = self::$db->prepare($q);
     if ( $s->execute(array($list_id)) ) {
       return $s->fetchAll(PDO::FETCH_OBJ);
@@ -127,5 +127,5 @@ class User extends DBHandler {
     }
     return false;
   }
-  
+
 }

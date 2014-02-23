@@ -13,11 +13,11 @@ if ( !isset($_POST['submit']) ) { // user hasn't submitted the form yet
   $email = isset($_POST['email']) ? trim($_POST['email']) : '';
 
   if (!empty($email)) {
-    
+
     include_once 'bootstrap.php';
     include_once 'User.php';
     $user = User::findByEmail($email);
-    if ($user) { 
+    if ($user) {
       // user found
       if ($user->is_subscribed) {
 
@@ -29,7 +29,7 @@ if ( !isset($_POST['submit']) ) { // user hasn't submitted the form yet
         $msg = 'Sei già stato cancellato dalla Newsletter!';
         $subscribed = false;
       }
-    } 
+    }
     else {
       $msg = 'Non sei iscritto alla Newsletter!';
       $subscribed = false;

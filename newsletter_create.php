@@ -8,7 +8,7 @@ include_once '_newsletter_form.php';
 
 if ( isset($_POST['submit']) ) {
 
-  if ( Newsletter::create($_POST['subject'], $_POST['template_id']) && 
+  if ( Newsletter::create($_POST['subject'], $_POST['template_id']) &&
        Resource::create($_FILES['resource'], $db->lastInsertId()) ) {
     echo SUCCESS;
   } else {

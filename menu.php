@@ -13,7 +13,7 @@
   </li>
   <li>
     <a href="<?=$cfg['root']?>templates.php"><?=TEMPLATES?></a>
-  </li>  
+  </li>
   <li>
     <a href="<?=$cfg['root']?>statistics.php"><?=STATISTICS?></a>
   </li>

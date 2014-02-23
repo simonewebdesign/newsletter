@@ -8,26 +8,26 @@ ol li {margin-bottom:50px;}
 
 <form action="send.php">
   <ol>
-    
+
     <li>
       <?=CHOOSE ." ". LISTA?>
       <?php $lists = Lista::all(); include_once '_list_select.php'; ?>
       <a href="list_create.php"><?=CREATE?></a> |
       <a href="lists.php"><?=LISTS?></a>
     </li>
-    
+
     <li>
       <?=CHOOSE ." ". NEWSLETTER?>
       <?php $newsletters = Newsletter::all(); include_once '_newsletter_select.php'; ?>
       <a href="newsletter_create.php"><?=CREATE?></a> |
       <a href="newsletters.php"><?=NEWSLETTERS?></a>
     </li>
-    
+
     <li>
       Click!
       <input name="send" type="submit" value="<?=SUBMIT?>" class="send">
     </li>
-    
+
   </ol>
 </form>
 

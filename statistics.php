@@ -14,8 +14,8 @@ $most_active_users_db = $db->query("SELECT
   u.id, u.name, u.email, u.is_active, u.is_subscribed, u.has_received_mail, u.created_at,
   e.id, e.user_id, e.resource_id, e.requested_at, e.ip_address, e.user_agent,
   COUNT(e.id) number_of_entries
-  FROM users u 
-  LEFT JOIN entries e ON u.id = e.user_id 
+  FROM users u
+  LEFT JOIN entries e ON u.id = e.user_id
   WHERE u.is_active = 1
   GROUP BY u.id
   ORDER BY number_of_entries DESC
@@ -71,8 +71,8 @@ $browsers = $browsers_db->fetchAll(PDO::FETCH_OBJ);
       </tr>
     </tfoot>
   </table>
-  
-  
+
+
   <table><caption>Top 50 most active users</caption>
     <thead>
       <tr>
@@ -87,7 +87,7 @@ $browsers = $browsers_db->fetchAll(PDO::FETCH_OBJ);
     <tr>
       <td><?=++$count?></td>
       <td><?=$user->email?></td>
-      <td><?=$user->number_of_entries?></td> 
+      <td><?=$user->number_of_entries?></td>
     </tr>
 <?php } ?>
     </tbody>
@@ -112,8 +112,8 @@ $browsers = $browsers_db->fetchAll(PDO::FETCH_OBJ);
     <tr>
       <td><?=++$count?></td>
       <td><?=$get_browser['browser']?></td>
-      <td><?=$get_browser['platform']?></td>   
-      <td><?=$browser->number_of_users?></td> 
+      <td><?=$get_browser['platform']?></td>
+      <td><?=$browser->number_of_users?></td>
     </tr>
 <?php } ?>
     </tbody>

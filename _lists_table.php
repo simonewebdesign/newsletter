@@ -1,5 +1,5 @@
 <table>
-  
+
   <thead>
     <tr>
       <th>ID</th>
@@ -10,7 +10,7 @@
       <th colspan=4><?=ACTIONS?></th>
     </tr>
   </thead>
-  
+
   <tbody>
     <?php foreach ($lists as $l) { ?>
     <tr>
@@ -18,7 +18,7 @@
       <td><?=$l->name?></td>
       <td><?=$l->users_count?></td>
       <td><?=date(PHP_DATE, strtotime($l->created_at))?></td>
-      
+
       <?php if ($l->updated_at == '0000-00-00 00:00:00') { ?>
       <td><?=NEVER?></td>
       <?php } else { ?>
@@ -31,7 +31,7 @@
     </tr>
     <?php } ?>
   </tbody>
-  
+
   <tfoot>
   </tfoot>
 

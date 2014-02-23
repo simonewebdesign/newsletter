@@ -3,9 +3,9 @@
 class Resource extends DBHandler {
 
   private static function upload($file) {
-    
+
     $upload_folder_name = 'uploads';
-    
+
     // Uploading image in the specified folder
     if ( $file['size'] > 1048576 ) {
       die('error image too large');
@@ -36,12 +36,12 @@ class Resource extends DBHandler {
       }
     }
   }
-  
+
   static function create($file, $newsletter_id) {
     if ( is_uploaded_file($file['tmp_name']) && $newsletter_id > 0 ) {
-      
+
       $upload_path = self::upload($file);
-      
+
       // Inserting resource into database
       $q = "INSERT INTO resources (mime_type, path, created_at, newsletter_id) VALUES (?,?,NOW(),?)";
 
@@ -50,7 +50,7 @@ class Resource extends DBHandler {
         $upload_path,
         $newsletter_id
       );
-      
+
       $s = self::$db->prepare($q);
       return $s->execute($sql_data);
     }
@@ -63,9 +63,9 @@ class Resource extends DBHandler {
 /*
   static function update($id, $file, $newsletter_id) {
     if ( $id > 0 && is_uploaded_file($file['tmp_name']) && $newsletter_id > 0 ) {
-      
+
       $upload_path = self::upload($file);
-      
+
       // Inserting resource into database
       $q = "UPDATE resources SET mime_type";
       $q = "INSERT INTO resources (mime_type, path, created_at, newsletter_id) VALUES (?,?,?,?)";
@@ -76,7 +76,7 @@ class Resource extends DBHandler {
         date("Y-m-d H:i:s"), // 2001-03-10 17:16:18 (the MySQL DATETIME format)
         $newsletter_id
       );
-      
+
       $s = self::$db->prepare($q);
       return $s->execute($sql_data);
     }
@@ -86,7 +86,7 @@ class Resource extends DBHandler {
   static function delete() {
     return false;
   }
-  
+
   static function findByNewsletterId($id) {
     if ($id > 0) {
       $q = "SELECT * FROM resources WHERE newsletter_id=?";
@@ -95,7 +95,7 @@ class Resource extends DBHandler {
         return $s->fetchObject();
       }
     }
-    
+
     return false;
   }
 

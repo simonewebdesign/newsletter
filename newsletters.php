@@ -7,7 +7,7 @@ $newsletters = Newsletter::all();
 <h1><?=$cfg['site_name']?> <?=NEWSLETTERS?></h1>
 
 <?php include_once 'menu.php'; ?>
-    
+
 <?php if ($newsletters) {
 
 include_once '_newsletters_table.php';

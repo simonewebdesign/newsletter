@@ -13,7 +13,7 @@ if ( isset($_POST['submit']) ) {
     echo SUCCESS;
   } else {
     echo FAIL . " L'Utente non e' stato creato (Probabilmente esiste gia').";
-  } 
+  }
 }
 
 

@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Migrations
 --
 
-ALTER TABLE `users` 
+ALTER TABLE `users`
 ADD `fails` TINYINT NOT NULL DEFAULT '0';
 
 CREATE TABLE IF NOT EXISTS `templates` (
@@ -117,25 +117,25 @@ CREATE TABLE IF NOT EXISTS `templates` (
   `name` varchar(100) NOT NULL,
   `body` text NOT NULL,
   `created_at` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `updated_at` datetime NOT NULL DEFAULT '0000-00-00 00:00:00', 
+  `updated_at` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `is_deleted` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
-ALTER TABLE `newsletters` 
+ALTER TABLE `newsletters`
 ADD `template_id` int(10) NOT NULL;
 
-ALTER TABLE `newsletters` 
+ALTER TABLE `newsletters`
 DROP `custom_template_html`;
 
-ALTER TABLE `newsletters` 
+ALTER TABLE `newsletters`
 DROP `description`;
 
 -- create index
 ALTER TABLE `users` ADD INDEX ( `list_id` );
 
 -- add constraint
-ALTER TABLE `users` ADD FOREIGN KEY ( `list_id` ) 
+ALTER TABLE `users` ADD FOREIGN KEY ( `list_id` )
 REFERENCES `lists` ( `id` )
 ON DELETE CASCADE ON UPDATE CASCADE;
 
@@ -143,7 +143,7 @@ ON DELETE CASCADE ON UPDATE CASCADE;
 ALTER TABLE `resources` ADD INDEX ( `newsletter_id` );
 
 -- add constraint
-ALTER TABLE `resources` ADD FOREIGN KEY ( `newsletter_id` ) 
+ALTER TABLE `resources` ADD FOREIGN KEY ( `newsletter_id` )
 REFERENCES `newsletters` ( `id` )
 ON DELETE CASCADE ON UPDATE CASCADE;
 
@@ -151,7 +151,7 @@ ON DELETE CASCADE ON UPDATE CASCADE;
 ALTER TABLE `newsletters` ADD INDEX ( `template_id` );
 
 -- template_id can be NULL
-ALTER TABLE `newsletters` CHANGE `template_id` `template_id` INT( 10 ) UNSIGNED NULL DEFAULT NULL; 
+ALTER TABLE `newsletters` CHANGE `template_id` `template_id` INT( 10 ) UNSIGNED NULL DEFAULT NULL;
 ALTER TABLE `templates` CHANGE `id` `id` INT( 10 ) UNSIGNED NULL AUTO_INCREMENT;
 
 -- add constraint

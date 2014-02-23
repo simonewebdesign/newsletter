@@ -7,7 +7,7 @@ var i = 0;
 for (i = 0; i < deleteAnchors.length; i++) {
 
   deleteAnchors[i].addEventListener('click', function(ev) {
-  
+
     if ( !confirm('Sei sicuro/a di voler cancellare?') ) {
       ev.preventDefault();
     }
@@ -17,7 +17,7 @@ for (i = 0; i < deleteAnchors.length; i++) {
 for (i = 0; i < sendAnchors.length; i++) {
 
   sendAnchors[i].addEventListener('click', function(ev) {
-  
+
     if ( !confirm('Sei sicuro/a di voler inviare la newsletter?') ) {
       ev.preventDefault();
     }

@@ -9,7 +9,7 @@ $templates = Template::all();
 <h1><?=$cfg['site_name']?> <?=TEMPLATES?></h1>
 
 <?php include_once 'menu.php'; ?>
-    
+
 <?php if ($templates) {
 
 include_once '_templates_table.php';
