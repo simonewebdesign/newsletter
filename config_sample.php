@@ -39,13 +39,13 @@ $cfg = array(
   //*/
 
   # miscellaneous
-  'language'            => 'it',
+  'language'            => 'en',
   'regex'               => '^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$^',
   'limit'               => 300, # limit of emails to send before refreshing the send.php page
   'word_wrap'           => 50,
   'timeout'             => 10000, # refresh timeout, in milliseconds.
   'debug_mode'          => 0, # enables SMTP debug information (2 for testing)
   'smtp_auth'           => true,
-  'charset'             => 'UTF-8',
+  'charset'             => 'utf8',
   'max_allowed_fails'   => 5
 );
