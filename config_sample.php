@@ -33,9 +33,10 @@ $cfg = array(
 
   //* test database settings
   'hostname'            => 'localhost',
+  'port'                => null,
   'dbname'              => 'newsletter',
   'username'            => 'root',
-  'password'            => '',
+  'password'            => 'toor',
   //*/
 
   # miscellaneous
