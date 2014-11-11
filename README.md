@@ -54,6 +54,7 @@ Mailing lists can be updated very easily by just copy pasting the addresses in a
 text field and pressing the update button. If you prefer you can always add one
 user at a time. Beware that when you delete a list, all users associated to that
 list will be automatically deleted too.
+However, when you delete something, it's actually soft deleted, meaning that the `is_deleted` field will be set to 1 (default is 0).
 
 You are encouraged to **translate** your application into your native language:
 you can do this by creating a new file under the `languages` folder.
